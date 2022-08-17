@@ -1,0 +1,31 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+      <SignAssembly>False</SignAssembly>
+      <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+      <Title>Alaveri Code Library SQL Data Classes</Title>
+      <Copyright></Copyright>
+      <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+      <Company>Alaveri Software</Company>
+      <Authors>Alaveri Software</Authors>
+      <Version>0.9.0</Version>
+      <AssemblyVersion>0.9.0</AssemblyVersion>
+      <PackageVersion>0.9.0</PackageVersion>
+      <PackageLicenseExpression>MIT</PackageLicenseExpression>
+      <PackageOutputPath>..\</PackageOutputPath>
+
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ACL.Data\ACL.Data.csproj" />
+    <ProjectReference Include="..\ACL.Core\ACL.Core.csproj" />
+  </ItemGroup>
+
+</Project>

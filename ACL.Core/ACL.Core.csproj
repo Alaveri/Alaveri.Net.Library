@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <TargetFramework>net6.0</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <SignAssembly>False</SignAssembly>
+        <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+        <Title>Alaveri Code Library Core Classes</Title>
+        <Copyright></Copyright>
+        <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+        <Company>Alaveri Software</Company>
+        <Authors>Alaveri Software</Authors>
+        <Version>0.9.0</Version>
+        <AssemblyVersion>0.9.0</AssemblyVersion>
+        <PackageVersion>0.9.0</PackageVersion>
+        <PackageLicenseExpression>MIT</PackageLicenseExpression>
+        <PackageOutputPath>..\</PackageOutputPath>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="FluentAssertions" Version="6.7.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <ProjectReference Include="..\ACL.Globalization\ACL.Globalization.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+        <None Update="LICENSE">
+            <Pack>True</Pack>
+            <PackagePath>\</PackagePath>
+        </None>
+    </ItemGroup>
+
+</Project>
