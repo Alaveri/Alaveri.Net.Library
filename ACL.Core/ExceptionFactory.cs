@@ -20,9 +20,9 @@ namespace ACL.Core
         /// Creates an InvalidOperationException with a translated message.
         /// </summary>
         /// <param name="obj">The null argument used to generate the exception message.</param>
-        public static InvalidOperationException CreateInvalidOperationException(object? obj)
+        public static InvalidOperationException CreateInvalidOperationException(string message)
         {
-            return new InvalidOperationException(DevTranslator.Current.TranslateFormat("InvalidOperationException", obj?.GetType()?.Name ?? string.Empty));
+            return new InvalidOperationException(message);
         }
     }
 }
