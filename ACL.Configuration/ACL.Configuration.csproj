@@ -6,14 +6,15 @@
     <Nullable>enable</Nullable>
       <SignAssembly>False</SignAssembly>
       <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-      <Title>Alaveri Code Library SQL Data Classes</Title>
+      <Title>Alaveri Code Library Configuration Classes</Title>
       <Copyright></Copyright>
       <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
       <Company>Alaveri Software</Company>
       <Authors>Alaveri Software</Authors>
-      <Version>$(AssemblyVersion)</Version>
-      <PackageVersion>1.0.1</PackageVersion>
+      <Version></Version>
+      <PackageVersion>$(AssemblyVersion)</PackageVersion>
       <FileVersion>$(AssemblyVersion)</FileVersion>
+      <PackageVersion>1.0.2.2</PackageVersion>
       <PackageOutputPath>..\</PackageOutputPath>
       <PackageLicenseFile>LICENSE</PackageLicenseFile>
       <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
@@ -31,11 +32,10 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ACL.Data\ACL.Data.csproj" />
     <ProjectReference Include="..\ACL.Core\ACL.Core.csproj" />
   </ItemGroup>
 

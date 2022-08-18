@@ -19,6 +19,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACL.UnitTesting", "ACL.Unit
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACL.Globalization.Test", "ACL.Globalization.Text\ACL.Globalization.Test.csproj", "{233F4C69-E2DC-45E1-9B7F-B8BD5C77C50A}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACL.Configuration", "ACL.Configuration\ACL.Configuration.csproj", "{8974F8AD-EF96-49AC-A605-E51B88B511AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACL.Common", "ACL.Common\ACL.Common.csproj", "{055A04B5-8FE6-4AB0-B0FE-C10F4E732CA0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -57,6 +61,14 @@ Global
 		{233F4C69-E2DC-45E1-9B7F-B8BD5C77C50A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{233F4C69-E2DC-45E1-9B7F-B8BD5C77C50A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{233F4C69-E2DC-45E1-9B7F-B8BD5C77C50A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8974F8AD-EF96-49AC-A605-E51B88B511AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8974F8AD-EF96-49AC-A605-E51B88B511AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8974F8AD-EF96-49AC-A605-E51B88B511AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8974F8AD-EF96-49AC-A605-E51B88B511AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{055A04B5-8FE6-4AB0-B0FE-C10F4E732CA0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{055A04B5-8FE6-4AB0-B0FE-C10F4E732CA0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{055A04B5-8FE6-4AB0-B0FE-C10F4E732CA0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{055A04B5-8FE6-4AB0-B0FE-C10F4E732CA0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

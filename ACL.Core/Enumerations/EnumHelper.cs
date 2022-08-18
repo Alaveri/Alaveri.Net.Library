@@ -52,6 +52,16 @@
         }
 
         /// <summary>
+        /// If an Enum is decorated with an EnumDescriptor attribute, this will return the value of the AdditionalData.
+        /// </summary>
+        /// <param name="enumValue">The enum value to use.</param>
+        /// <returns>The value of the AdditionalData or null if not found.</returns>
+        public static string? GetAdditionalData(Enum enumValue)
+        {
+            return GetEnumAttribute<EnumDescriptorAttribute>(enumValue)?.AdditionalData;
+        }
+
+        /// <summary>
         /// Retrives an enum value with an EnumDecriptor attribute by matching identifier.
         /// </summary>
         /// <typeparam name="TEnum">The type of enum to search.</typeparam>
