@@ -1,4 +1,7 @@
-﻿namespace ACL.Core.Enumerations
+﻿using ACL.Core.Extensions.Conversion;
+using System.Runtime.CompilerServices;
+
+namespace ACL.Core.Enumerations
 {
     /// <summary>
     /// Provides functions for working with Enums.
@@ -11,7 +14,7 @@
         /// <typeparam name="TAttribute">The type of attribute to find.</typeparam>
         /// <param name="value">The enum value to find.</param>
         /// <returns>The attribute of the specified type and enum value, or null if none found.</returns>
-        public static TAttribute? GetEnumAttribute<TAttribute>(Enum value) where TAttribute : System.Attribute
+        public static TAttribute? GetEnumAttribute<TAttribute>(Enum value) where TAttribute : Attribute
         {
             var type = value.GetType();
             var info = type.GetMember(value.ToString());
@@ -85,5 +88,16 @@
                 .Cast<TEnum>()
                 .ToDictionary(value => value, value => GetIdentifier(value));
         }
+
+        /// <summary>
+        /// Returns true if the specified enum has the specified attribute.
+        /// </summary>
+        /// <typeparam name="TAttribute">The type of attribute.</typeparam>
+        /// <param name="enumValue">The value of the enum to check.</param>
+        /// <returns>true if the specified enum has the specified attribute</returns>
+        public static bool HasAttribute<TAttribute>(Enum enumValue) where TAttribute: Attribute
+        {
+            return GetEnumAttribute<TAttribute>(enumValue) != null;
+        }            
     }
 }

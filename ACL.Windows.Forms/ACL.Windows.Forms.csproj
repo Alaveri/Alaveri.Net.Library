@@ -1,34 +1,30 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <PackageBuild>$([System.Environment]::GetEnvironmentVariable('ACL.BuildNumber', System.EnvironmentVariableTarget.User))</PackageBuild>
     </PropertyGroup>
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
+        <TargetFramework>net6.0-windows</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
         <Nullable>enable</Nullable>
         <SignAssembly>False</SignAssembly>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-        <Title>Alaveri Code Library Globalization Classes</Title>
+        <Title>Alaveri Code Library WinForms Classes</Title>
         <Copyright>©2022 Alaveri Software</Copyright>
         <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
         <Company>Alaveri Software</Company>
         <Authors>Alaveri Software</Authors>
         <Version>$(AssemblyVersion)</Version>
-        <PackageVersion>1.0.2.$(PackageBuild)</PackageVersion>
         <FileVersion>$(AssemblyVersion)</FileVersion>
+        <PackageVersion>1.0.1.$(PackageBuild)</PackageVersion>
         <PackageOutputPath>..\</PackageOutputPath>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <NeutralLanguage>en-US</NeutralLanguage>
         <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+        <UseWindowsForms>true</UseWindowsForms>
     </PropertyGroup>
-
     <ItemGroup>
-        <ProjectReference Include="..\ACL.Data\ACL.Data.csproj" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     </ItemGroup>
-
-    <ItemGroup>
-      <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
-    </ItemGroup>
-
     <ItemGroup>
       <Compile Update="Version.cs">
         <DependentUpon>Version.tt</DependentUpon>
@@ -36,7 +32,6 @@
         <AutoGen>True</AutoGen>
       </Compile>
     </ItemGroup>
-
     <ItemGroup>
       <None Update="LICENSE">
         <Pack>True</Pack>
@@ -47,5 +42,7 @@
         <Generator>TextTemplatingFileGenerator</Generator>
       </None>
     </ItemGroup>
-
+    <ItemGroup>
+      <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+    </ItemGroup>
 </Project>

@@ -1,4 +1,6 @@
-﻿namespace ACL.Core.Enumerations
+﻿using ACL.Core.Extensions.Conversion;
+
+namespace ACL.Core.Enumerations
 {
     /// <summary>
     /// Extension methods for enum related functions.
@@ -44,6 +46,27 @@
         public static string GetIdentifier(this Enum value)
         {
             return EnumHelper.GetIdentifier(value) ?? string.Empty;
+        }
+
+        /// <summary>
+        /// If an Enum is decorated with an EnumDescriptor attribute, this will return the value of the AdditionalData.
+        /// </summary>
+        /// <param name="value">The enum value to use.</param>
+        /// <returns>The value of the AttitionalData or null if not found.</returns>
+        public static string GetAdditionalData(this Enum value)
+        {
+            return EnumHelper.GetAdditionalData(value) ?? string.Empty;
+        }
+
+        /// <summary>
+        /// Returns true if the specified enum has the specified attribute.
+        /// </summary>
+        /// <typeparam name="TAttribute">The type of attribute.</typeparam>
+        /// <param name="enumValue">The value of the enum to check.</param>
+        /// <returns>true if the specified enum has the specified attribute</returns>
+        public static bool HasAttribute<TAttribute>(this Enum enumValue) where TAttribute : Attribute
+        {
+            return EnumHelper.HasAttribute<TAttribute>(enumValue);
         }
     }
 }

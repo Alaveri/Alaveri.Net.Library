@@ -8,7 +8,6 @@ namespace ACL.Configuration
         string AppName { get; }
         string ConfigurationExtension { get; }
         string ConfigurationFilename { get; }
-        string ConfigurationName { get; }
         string ConfigurationPath { get; }
         Encoding Encoding { get; }
         AppConfigurationFormat Format { get; }

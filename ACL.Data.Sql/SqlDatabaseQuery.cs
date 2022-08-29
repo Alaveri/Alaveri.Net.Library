@@ -20,7 +20,7 @@ namespace ACL.Data.Sql
         protected virtual SqlCommand PrepareCommand(IDatabaseQueryOptions options)
         {
             if (Connection == null)
-                throw ExceptionFactory.CreateInvalidOperationException(Connection);
+                throw ExceptionFactory.CreateInvalidOperationException("Connection was not set.");
             if (Connection.State == ConnectionState.Closed)
                 Connection.Open();
 

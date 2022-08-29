@@ -4,6 +4,7 @@ using System.Text;
 using System.Xml;
 using System.Xml.Serialization;
 using ACL.Core.Enumerations;
+using Formatting = Newtonsoft.Json.Formatting;
 
 namespace ACL.Configuration
 {
@@ -37,6 +38,8 @@ namespace ACL.Configuration
         /// <summary>
         /// The encoding used during serialization and deserialization.
         /// </summary>
+        [JsonIgnore]
+        [XmlIgnore]
         public virtual Encoding Encoding => Encoding.UTF8;
 
         /// <summary>
@@ -63,6 +66,8 @@ namespace ACL.Configuration
         /// <summary>
         /// The file extension used for the configuration. For example, if the Organization name is Alaveri, the configuration filename would be %appdata%\Alaveri\[AppName].[ConfigurationExtension].
         /// </summary>
+        [JsonIgnore]
+        [XmlIgnore]
         public virtual string ConfigurationExtension => EnumHelper.GetAdditionalData(Format) ?? string.Empty;
 
         /// <summary>
@@ -75,7 +80,7 @@ namespace ACL.Configuration
         /// The format of the configuration data.  If custom, override the TransformConfigurationData method to generate the configuration data.
         /// </summary>
         [JsonIgnore]
-        public abstract AppConfigurationFormat Format { get; }
+        public virtual AppConfigurationFormat Format => AppConfigurationFormat.Json;
 
         /// <summary>
         /// The name of the application.  By default, ConfigurationName returns the AppName.
@@ -102,7 +107,7 @@ namespace ACL.Configuration
         /// </summary>
         [JsonIgnore]
         [XmlIgnore]
-        public virtual string ConfigurationFilename => Path.Combine(ConfigurationPath, AppName, ConfigurationExtension);
+        public virtual string ConfigurationFilename => Path.Combine(ConfigurationPath, AppName, ConfigurationName) + ConfigurationExtension;
 
         /// <summary>
         /// If the configuration format is Custom, override this method to return the configuration data used for saving and loading the configuration.
@@ -114,7 +119,7 @@ namespace ACL.Configuration
         {
             switch (config.Format)
             {
-                case AppConfigurationFormat.Json: return Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(config));
+                case AppConfigurationFormat.Json: return Encoding.UTF8.GetBytes(JsonConvert.SerializeObject(config, Formatting.Indented));
                 case AppConfigurationFormat.Xml:
                     {
                         var serializer = new XmlSerializer(typeof(TConfiguration), null, config.XmlExtraTypes?.ToArray(), null, config.XmlDefaultNamespace);

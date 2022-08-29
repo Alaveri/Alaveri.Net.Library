@@ -1,5 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
-
+    <PropertyGroup>
+        <PackageBuild>$([System.Environment]::GetEnvironmentVariable('ACL.BuildNumber', System.EnvironmentVariableTarget.User))</PackageBuild>
+    </PropertyGroup>
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
@@ -7,31 +9,39 @@
         <SignAssembly>False</SignAssembly>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <Title>Alaveri Code Library Data Classes</Title>
-        <Copyright></Copyright>
+        <Copyright>©2022 Alaveri Software</Copyright>
         <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
         <Company>Alaveri Software</Company>
         <Authors>Alaveri Software</Authors>
         <Version>$(AssemblyVersion)</Version>
-        <PackageVersion>1.0.1</PackageVersion>
         <FileVersion>$(AssemblyVersion)</FileVersion>
         <PackageOutputPath>..\</PackageOutputPath>
+        <PackageVersion>1.0.4.$(PackageBuild)</PackageVersion>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
     </PropertyGroup>
 
     <ItemGroup>
-      <Compile Include="..\ACL.Common\Version.cs" Link="Version.cs" />
+      <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
     </ItemGroup>
 
     <ItemGroup>
-      <None Include="..\..\Emerald\LICENSE">
+      <Compile Update="Version.cs">
+        <DependentUpon>Version.tt</DependentUpon>
+        <DesignTime>True</DesignTime>
+        <AutoGen>True</AutoGen>
+      </Compile>
+    </ItemGroup>
+
+    <ItemGroup>
+      <None Update="LICENSE">
         <Pack>True</Pack>
         <PackagePath>\</PackagePath>
       </None>
-    </ItemGroup>
-
-    <ItemGroup>
-      <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+      <None Update="Version.tt">
+        <LastGenOutput>Version.cs</LastGenOutput>
+        <Generator>TextTemplatingFileGenerator</Generator>
+      </None>
     </ItemGroup>
 
 
