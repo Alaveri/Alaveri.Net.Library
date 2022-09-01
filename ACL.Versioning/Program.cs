@@ -9,9 +9,11 @@ namespace ACL.Versioning
         {
             try
             {
+#if DEBUG
                 var buildNumber = Convert.ToInt32(Environment.GetEnvironmentVariable("ACL.BuildNumber", EnvironmentVariableTarget.User) ?? "0");
                 buildNumber++;
                 Environment.SetEnvironmentVariable("ACL.BuildNumber", buildNumber.ToString(), EnvironmentVariableTarget.User);
+#endif
             }
             catch (Exception ex)
             {

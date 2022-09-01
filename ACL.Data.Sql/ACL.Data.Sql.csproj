@@ -16,7 +16,7 @@
       <Version>$(AssemblyVersion)</Version>
       <PackageVersion>1.0.4.$(PackageBuild)</PackageVersion>
       <FileVersion>$(AssemblyVersion)</FileVersion>
-      <PackageOutputPath>..\</PackageOutputPath>
+      <PackageOutputPath>..\Nuget</PackageOutputPath>
       <PackageLicenseFile>LICENSE</PackageLicenseFile>
       <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
   </PropertyGroup>
@@ -35,21 +35,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Compile Update="Version.cs">
-      <DependentUpon>Version.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-    </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="LICENSE">
       <Pack>True</Pack>
       <PackagePath>\</PackagePath>
-    </None>
-    <None Update="Version.tt">
-      <LastGenOutput>Version.cs</LastGenOutput>
-      <Generator>TextTemplatingFileGenerator</Generator>
     </None>
   </ItemGroup>
 

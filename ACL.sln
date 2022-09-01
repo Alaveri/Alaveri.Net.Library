@@ -4,12 +4,25 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 VisualStudioVersion = 17.3.32804.467
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACL.Core", "ACL.Core\ACL.Core.csproj", "{4E58A63D-7DCA-4DA2-BFE9-05FEBA448A7A}"
+	ProjectSection(ProjectDependencies) = postProject
+		{45825407-C211-419B-ADFD-D96C439F9A04} = {45825407-C211-419B-ADFD-D96C439F9A04}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACL.Globalization", "ACL.Globalization\ACL.Globalization.csproj", "{4C86D04A-3DE2-4F9E-AE31-DAC2959F27C2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{45825407-C211-419B-ADFD-D96C439F9A04} = {45825407-C211-419B-ADFD-D96C439F9A04}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACL.Data", "ACL.Data\ACL.Data.csproj", "{F9B2880D-12B8-430A-A158-A8AE3A19667C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{055A04B5-8FE6-4AB0-B0FE-C10F4E732CA0} = {055A04B5-8FE6-4AB0-B0FE-C10F4E732CA0}
+		{45825407-C211-419B-ADFD-D96C439F9A04} = {45825407-C211-419B-ADFD-D96C439F9A04}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACL.Data.Sql", "ACL.Data.Sql\ACL.Data.Sql.csproj", "{14397422-C6AB-4D70-B761-A17974EABA38}"
+	ProjectSection(ProjectDependencies) = postProject
+		{45825407-C211-419B-ADFD-D96C439F9A04} = {45825407-C211-419B-ADFD-D96C439F9A04}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACL.Core.Test", "ACL.Core.Test\ACL.Core.Test.csproj", "{A50B3FFD-48FF-46A9-81BC-7AD0422A301F}"
 EndProject
@@ -20,12 +33,27 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACL.Globalization.Test", "ACL.Globalization.Text\ACL.Globalization.Test.csproj", "{233F4C69-E2DC-45E1-9B7F-B8BD5C77C50A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACL.Configuration", "ACL.Configuration\ACL.Configuration.csproj", "{8974F8AD-EF96-49AC-A605-E51B88B511AB}"
+	ProjectSection(ProjectDependencies) = postProject
+		{45825407-C211-419B-ADFD-D96C439F9A04} = {45825407-C211-419B-ADFD-D96C439F9A04}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACL.Common", "ACL.Common\ACL.Common.csproj", "{055A04B5-8FE6-4AB0-B0FE-C10F4E732CA0}"
+	ProjectSection(ProjectDependencies) = postProject
+		{45825407-C211-419B-ADFD-D96C439F9A04} = {45825407-C211-419B-ADFD-D96C439F9A04}
+	EndProjectSection
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACL.Versioning", "ACL.Versioning\ACL.Versioning.csproj", "{45825407-C211-419B-ADFD-D96C439F9A04}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACL.Windows.Forms", "ACL.Windows.Forms\ACL.Windows.Forms.csproj", "{451AA6D8-C323-438A-B1E8-65FD00B23FCA}"
+	ProjectSection(ProjectDependencies) = postProject
+		{0B0E590A-66C3-4FA1-9D29-1FF2845E0038} = {0B0E590A-66C3-4FA1-9D29-1FF2845E0038}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACL.Maui.Forms", "ACL.Maui.Forms\ACL.Maui.Forms.csproj", "{10A8A519-A297-4024-AAC4-7B7221E14C87}"
+	ProjectSection(ProjectDependencies) = postProject
+		{45825407-C211-419B-ADFD-D96C439F9A04} = {45825407-C211-419B-ADFD-D96C439F9A04}
+		{4E58A63D-7DCA-4DA2-BFE9-05FEBA448A7A} = {4E58A63D-7DCA-4DA2-BFE9-05FEBA448A7A}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -81,6 +109,10 @@ Global
 		{451AA6D8-C323-438A-B1E8-65FD00B23FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{451AA6D8-C323-438A-B1E8-65FD00B23FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{451AA6D8-C323-438A-B1E8-65FD00B23FCA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10A8A519-A297-4024-AAC4-7B7221E14C87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10A8A519-A297-4024-AAC4-7B7221E14C87}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10A8A519-A297-4024-AAC4-7B7221E14C87}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10A8A519-A297-4024-AAC4-7B7221E14C87}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
