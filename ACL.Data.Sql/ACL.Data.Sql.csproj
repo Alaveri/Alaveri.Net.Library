@@ -14,7 +14,7 @@
       <Company>Alaveri Software</Company>
       <Authors>Alaveri Software</Authors>
       <Version>$(AssemblyVersion)</Version>
-      <PackageVersion>1.0.4.$(PackageBuild)</PackageVersion>
+      <PackageVersion>1.0.4$(PackageBuild)</PackageVersion>
       <FileVersion>$(AssemblyVersion)</FileVersion>
       <PackageOutputPath>..\Nuget</PackageOutputPath>
       <PackageLicenseFile>LICENSE</PackageLicenseFile>

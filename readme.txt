@@ -1,0 +1,1 @@
+Don't delete this file, it exists only to make Git persist the folder.

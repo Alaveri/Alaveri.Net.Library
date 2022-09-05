@@ -16,8 +16,7 @@
 
     <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
         <Exec Command="del /F /S /Q  &quot;$(SolutionDir)nuget\*.nupkg&quot;" />
-    </Target>
-    
+    </Target>    
         <Target Name="PostBuild" AfterTargets="PostBuildEvent">
       <Exec Command="&quot;$(SolutionDir)version/ACL.Versioning.exe&quot;" />
     </Target>  

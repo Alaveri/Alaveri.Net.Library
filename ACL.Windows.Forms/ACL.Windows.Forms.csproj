@@ -15,7 +15,7 @@
         <Authors>Alaveri Software</Authors>
         <Version>$(AssemblyVersion)</Version>
         <FileVersion>$(AssemblyVersion)</FileVersion>
-        <PackageVersion>1.0.1.$(PackageBuild)</PackageVersion>
+        <PackageVersion>1.0.1$(PackageBuild)</PackageVersion>
         <PackageOutputPath>..\Nuget</PackageOutputPath>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <NeutralLanguage>en-US</NeutralLanguage>

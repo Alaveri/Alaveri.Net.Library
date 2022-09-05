@@ -49,10 +49,15 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACL.Windows.Forms", "ACL.Wi
 		{0B0E590A-66C3-4FA1-9D29-1FF2845E0038} = {0B0E590A-66C3-4FA1-9D29-1FF2845E0038}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ACL.Maui.Forms", "ACL.Maui.Forms\ACL.Maui.Forms.csproj", "{10A8A519-A297-4024-AAC4-7B7221E14C87}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ACL.Maui.Windows", "ACL.Maui.Windows\ACL.Maui.Windows.csproj", "{10A8A519-A297-4024-AAC4-7B7221E14C87}"
 	ProjectSection(ProjectDependencies) = postProject
 		{45825407-C211-419B-ADFD-D96C439F9A04} = {45825407-C211-419B-ADFD-D96C439F9A04}
 		{4E58A63D-7DCA-4DA2-BFE9-05FEBA448A7A} = {4E58A63D-7DCA-4DA2-BFE9-05FEBA448A7A}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{8B017D45-1757-4EAA-AD06-DBB949AB0A4D}"
+	ProjectSection(SolutionItems) = preProject
+		readme.txt = readme.txt
 	EndProjectSection
 EndProject
 Global

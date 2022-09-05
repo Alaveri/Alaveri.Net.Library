@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace ACL.Maui.Forms
+namespace ACL.Maui.Windows
 {
     // All the code in this file is only included on Tizen.
     public class PlatformClass1

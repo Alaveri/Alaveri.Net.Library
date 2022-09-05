@@ -5,7 +5,7 @@
     <PropertyGroup>
         <TargetFramework>net6.0</TargetFramework>
         <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+        <Nullable>disable</Nullable>
         <SignAssembly>False</SignAssembly>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <Title>Alaveri Code Library Configuration Classes</Title>
@@ -16,7 +16,7 @@
         <Version></Version>
         <FileVersion>$(AssemblyVersion)</FileVersion>
         <PackageOutputPath>..\Nuget</PackageOutputPath>
-        <PackageVersion>1.0.2.$(PackageBuild)</PackageVersion>
+        <PackageVersion>1.0.2$(PackageBuild)</PackageVersion>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
         <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
     </PropertyGroup>

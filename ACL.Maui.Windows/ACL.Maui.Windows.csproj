@@ -3,14 +3,13 @@
         <PackageBuild>$([System.Environment]::GetEnvironmentVariable('ACL.BuildNumber', System.EnvironmentVariableTarget.User))</PackageBuild>
     </PropertyGroup>
 	<PropertyGroup>
-		<TargetFrameworks>net6.0;net6.0-android;net6.0-ios;net6.0-maccatalyst</TargetFrameworks>
 		<TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net6.0-windows10.0.19041.0</TargetFrameworks>
 		<!-- Uncomment to also build the tizen app. You will need to install tizen by following this: https://github.com/Samsung/Tizen.NET -->
 		<!-- <TargetFrameworks>$(TargetFrameworks);net6.0-tizen</TargetFrameworks> -->
 		<UseMaui>true</UseMaui>
 		<SingleProject>true</SingleProject>
 		<ImplicitUsings>enable</ImplicitUsings>
-                <Nullable>enable</Nullable>
+        <Nullable>disable</Nullable>
         <SignAssembly>False</SignAssembly>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
         <Title>Alaveri Code Library Maui Forms Classes</Title>
@@ -20,8 +19,8 @@
         <Authors>Alaveri Software</Authors>
         <Version>$(AssemblyVersion)</Version>
         <FileVersion>$(AssemblyVersion)</FileVersion>
-        <PackageVersion>1.0.1.$(PackageBuild)</PackageVersion>
-        <PackageOutputPath>..\Nuget</PackageOutputPath>        
+        <PackageVersion>1.0.1$(PackageBuild)</PackageVersion>
+        <PackageOutputPath>..\Nuget</PackageOutputPath>
         <NeutralLanguage>en-US</NeutralLanguage>
         <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
         <PackageLicenseFile>LICENSE</PackageLicenseFile>
@@ -39,5 +38,14 @@
             <Pack>True</Pack>
             <PackagePath>\</PackagePath>
         </None>
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.4" />
+      <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\ACL.Core\ACL.Core.csproj" />
     </ItemGroup>
 </Project>
