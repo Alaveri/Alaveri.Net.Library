@@ -1,5 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System.Xml.Serialization;
+using System.Text.Json.Serialization;
 #if WINDOWS
 using Windows.Graphics;
 using Microsoft.UI.Windowing;

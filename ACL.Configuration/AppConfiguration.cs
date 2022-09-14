@@ -96,7 +96,7 @@ public abstract class AppConfiguration : IAppConfiguration
     /// <summary>
     /// The path to the configuration file.  Defaults to %appdata%\[OrganizationName]\.
     /// </summary>
-    public static string ConfigurationPath => $"{Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.CommonApplicationData), OrganizationName).TrimEnd(Path.DirectorySeparatorChar)}{Path.DirectorySeparatorChar}";
+    public static string ConfigurationPath => $"{Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData), OrganizationName).TrimEnd(Path.DirectorySeparatorChar)}{Path.DirectorySeparatorChar}";
 
     /// <summary>
     /// The full path and filename of the configuration file.  By default, the full path and filename is %appdata%\[Organization]\[ConfigurationName].[ConfigurationExtension].
@@ -248,8 +248,12 @@ public abstract class AppConfiguration : IAppConfiguration
     /// </summary>
     /// <param name="filename">The name of the file to write.</param>
     /// <param name="encoding">The encoding to use.</param>
+    /// <exception cref="ArgumentNullException"
     public void SaveToFile(string filename, Encoding encoding)
     {
+        if (filename is null)
+            throw new ArgumentNullException(nameof(filename));
+
         var dir = Path.GetDirectoryName(filename) + Path.DirectorySeparatorChar;
         if (!Directory.Exists(dir))
            Directory.CreateDirectory(dir);

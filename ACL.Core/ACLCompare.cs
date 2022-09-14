@@ -1,4 +1,6 @@
-﻿namespace ACL.Core
+﻿using ACL.Core.Extensions.Conversion;
+
+namespace ACL.Core
 {
     /// <summary>
     /// Provides comparison utilities.
@@ -15,20 +17,7 @@
         /// <returns>True of the value is in the sequence.</returns>
         public static bool InSequence<TValue>(TValue? value, IEnumerable<TValue> sequence, IComparer<TValue>? comparer = null)
         {
-            foreach (var item in sequence)
-            {
-                if (comparer == null)
-                {
-                    if (item?.Equals(value) ?? false)
-                        return true;
-                }
-                else
-                {
-                    if (comparer.Compare(item, value) == 0)
-                        return true;
-                }
-            }
-            return false;
+            return sequence.Any(item => (comparer?.Compare(item, value) ?? item?.Equals(value).AsInt32() ?? 0) == 0);;
         }
 
         /// <summary>

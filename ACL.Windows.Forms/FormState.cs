@@ -29,7 +29,17 @@ namespace ACL.Windows.Forms
         /// The size of the form.
         /// </summary>
         public Size Size { get; set; }
-        
+
+        /// <summary>
+        /// The normal size of the form.
+        /// </summary>
+        public Size NormalSize { get; set; }
+
+        /// <summary>
+        /// The normal location of the form.
+        /// </summary>
+        public Point NormalLocation { get; set; }
+
         /// <summary>
         /// The form's window state.
         /// </summary>
@@ -41,10 +51,12 @@ namespace ACL.Windows.Forms
         public bool Initialized { get; set; }
 
         /// <summary>
-        /// Populates the FormState's properties from the Form's properties.
+        /// Stores the Form's state.
         /// </summary>
-        public void PopulateFromForm()
+        public void StoreFormState()
         {
+
+
             if (Form == null)
                 return;
             Initialized = true;
@@ -57,7 +69,7 @@ namespace ACL.Windows.Forms
         }
 
         /// <summary>
-        /// Sets the form's properties from the FormState's properties.
+        /// Restores the Form's state.
         /// </summary>
         public void SetFormState()
         {
