@@ -1,0 +1,44 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+    <PropertyGroup>
+        <PackageBuild>$([System.Environment]::GetEnvironmentVariable('Alaveri.BuildNumber', System.EnvironmentVariableTarget.User))</PackageBuild>
+    </PropertyGroup>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+      <SignAssembly>False</SignAssembly>
+      <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+      <Title>Alaveri Code Library SQL Data Classes</Title>
+      <Copyright>©2022 Alaveri Software</Copyright>
+      <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+      <Company>Alaveri Software</Company>
+      <Authors>Alaveri Software</Authors>
+      <Version>$(AssemblyVersion)</Version>
+      <PackageVersion>1.0.4$(PackageBuild)</PackageVersion>
+      <FileVersion>$(AssemblyVersion)</FileVersion>
+      <PackageOutputPath>..\Nuget</PackageOutputPath>
+      <PackageLicenseFile>LICENSE</PackageLicenseFile>
+      <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Alaveri.Data\Alaveri.Data.csproj" />
+    <ProjectReference Include="..\Alaveri.Core\Alaveri.Core.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="LICENSE">
+      <Pack>True</Pack>
+      <PackagePath>\</PackagePath>
+    </None>
+  </ItemGroup>
+
+</Project>

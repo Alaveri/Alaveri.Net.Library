@@ -1,0 +1,24 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+    <PropertyGroup>
+        <OutputType>WinExe</OutputType>
+        <TargetFramework>net6.0-windows</TargetFramework>
+        <ImplicitUsings>enable</ImplicitUsings>
+        <Nullable>enable</Nullable>
+        <OutputPath>..\Version\</OutputPath>
+        <AppendTargetFrameworkToOutputPath>False</AppendTargetFrameworkToOutputPath>
+        <UseWindowsForms>True</UseWindowsForms>
+    </PropertyGroup>
+
+    <ItemGroup>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    </ItemGroup>
+
+    <Target Name="PreBuild" BeforeTargets="PreBuildEvent">
+        <Exec Command="del /F /S /Q  &quot;$(SolutionDir)nuget\*.nupkg&quot;" />
+    </Target>    
+        <Target Name="PostBuild" AfterTargets="PostBuildEvent">
+      <Exec Command="&quot;$(SolutionDir)version/Alaveri.Versioning.exe&quot;" />
+    </Target>  
+
+</Project>
