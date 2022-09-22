@@ -3,37 +3,37 @@
         <PackageBuild>$([System.Environment]::GetEnvironmentVariable('Alaveri.BuildNumber', System.EnvironmentVariableTarget.User))</PackageBuild>
     </PropertyGroup>
     <PropertyGroup>
-        <TargetFramework>net6.0</TargetFramework>
-        <ImplicitUsings>enable</ImplicitUsings>
-        <Nullable>enable</Nullable>
+        <TargetFramework>net6.0-windows10.0.17763.0</TargetFramework>
+        <TargetPlatformVersion>net6.0-windows10.0.17763.0</TargetPlatformVersion>
+        <Nullable>disable</Nullable>
         <SignAssembly>False</SignAssembly>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-        <Title>Alaveri .NET Library Globalization Classes</Title>
+        <Title>Alaveri .NET Library WPF Classes</Title>
         <Copyright>©2022 Alaveri Software</Copyright>
         <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
         <Company>Alaveri Software</Company>
         <Authors>Alaveri Software</Authors>
         <Version>$(AssemblyVersion)</Version>
-        <PackageVersion>1.0.2$(PackageBuild)</PackageVersion>
         <FileVersion>$(AssemblyVersion)</FileVersion>
+        <PackageVersion>1.0.1$(PackageBuild)</PackageVersion>
         <PackageOutputPath>..\Nuget</PackageOutputPath>
-        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <NeutralLanguage>en-US</NeutralLanguage>
         <GenerateAssemblyInfo>False</GenerateAssemblyInfo>
+        <PackageLicenseFile>LICENSE</PackageLicenseFile>
+        <UseWPF>true</UseWPF>
+        <SupportedOSPlatformVersion>10.0.17763.0</SupportedOSPlatformVersion>
+        <PlatformTarget>AnyCPU</PlatformTarget>
     </PropertyGroup>
 
     <ItemGroup>
-        <ProjectReference Include="..\Alaveri.Data\Alaveri.Data.csproj" />
+        <None Include="LICENSE">
+          <PackagePath>\</PackagePath>
+          <Pack>True</Pack>
+        </None>
     </ItemGroup>
 
     <ItemGroup>
-      <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <None Update="LICENSE">
-        <Pack>True</Pack>
-        <PackagePath>\</PackagePath>
-      </None>
+        <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
     </ItemGroup>
 
 </Project>

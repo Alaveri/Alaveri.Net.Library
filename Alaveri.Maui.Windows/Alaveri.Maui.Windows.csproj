@@ -12,7 +12,7 @@
         <Nullable>disable</Nullable>
         <SignAssembly>False</SignAssembly>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-        <Title>Alaveri Code Library Maui Forms Classes</Title>
+        <Title>Alaveri .NET Library Maui Forms Classes</Title>
         <Copyright>©2022 Alaveri Software</Copyright>
         <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
         <Company>Alaveri Software</Company>

@@ -1,7 +1,7 @@
+using Alaveri.Globalization.Development;
 using FluentAssertions;
-using ACL.Globalization.Development;
 
-namespace ACL.Globalization.Test;
+namespace Alaveri.Globalization.Test;
 
 [TestClass]
 public class Tests

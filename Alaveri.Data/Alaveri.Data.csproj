@@ -1,4 +1,5 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+
+<Project Sdk="Microsoft.NET.Sdk">
     <PropertyGroup>
         <PackageBuild>$([System.Environment]::GetEnvironmentVariable('Alaveri.BuildNumber', System.EnvironmentVariableTarget.User))</PackageBuild>
     </PropertyGroup>
@@ -8,7 +9,7 @@
         <Nullable>enable</Nullable>
         <SignAssembly>False</SignAssembly>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
-        <Title>Alaveri Code Library Data Classes</Title>
+        <Title>Alaveri .NET Library Data Classes</Title>
         <Copyright>©2022 Alaveri Software</Copyright>
         <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
         <Company>Alaveri Software</Company>

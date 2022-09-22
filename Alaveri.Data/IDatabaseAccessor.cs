@@ -1,4 +1,4 @@
-﻿using System.Data;
+using System.Data;
 using System.Data.Common;
 
 namespace Alaveri.Data
@@ -18,7 +18,7 @@ namespace Alaveri.Data
 
         /// <summary>
         /// If true, the accessor will truncate the length of string paramters to the specified
-        /// parmeter size.
+        /// parameter size.
         /// </summary>
         bool TruncateStringParameters { get; set; }
 
