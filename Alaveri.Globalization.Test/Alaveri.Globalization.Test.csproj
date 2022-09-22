@@ -17,7 +17,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ACL.Globalization\ACL.Globalization.csproj" />
+    <ProjectReference Include="..\Alaveri.Globalization\Alaveri.Globalization.csproj" />
   </ItemGroup>
 
 </Project>

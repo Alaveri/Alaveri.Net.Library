@@ -13,7 +13,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alaveri.Globalization", "Al
 		{45825407-C211-419B-ADFD-D96C439F9A04} = {45825407-C211-419B-ADFD-D96C439F9A04}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "`ACL`.Data", "Alaveri.Data\Alaveri.Data.csproj", "{F9B2880D-12B8-430A-A158-A8AE3A19667C}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alaveri.Data", "Alaveri.Data\Alaveri.Data.csproj", "{F9B2880D-12B8-430A-A158-A8AE3A19667C}"
 	ProjectSection(ProjectDependencies) = postProject
 		{055A04B5-8FE6-4AB0-B0FE-C10F4E732CA0} = {055A04B5-8FE6-4AB0-B0FE-C10F4E732CA0}
 		{45825407-C211-419B-ADFD-D96C439F9A04} = {45825407-C211-419B-ADFD-D96C439F9A04}
@@ -29,8 +29,6 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alaveri.Data.Test", "Alaveri.Data.Test\Alaveri.Data.Test.csproj", "{C070C3AC-00B9-4F38-82CF-F39B55CD6026}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alaveri.UnitTesting", "Alaveri.UnitTesting\Alaveri.UnitTesting.csproj", "{0B0E590A-66C3-4FA1-9D29-1FF2845E0038}"
-EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alaveri.Globalization.Test", "Alaveri.Globalization.Text\Alaveri.Globalization.Test.csproj", "{233F4C69-E2DC-45E1-9B7F-B8BD5C77C50A}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alaveri.Configuration", "Alaveri.Configuration\Alaveri.Configuration.csproj", "{8974F8AD-EF96-49AC-A605-E51B88B511AB}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -63,6 +61,13 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "License", "License", "{5C63F580-906D-4DDB-883F-932D9FABD93E}"
 	ProjectSection(SolutionItems) = preProject
 		Alaveri.Configuration\LICENSE = Alaveri.Configuration\LICENSE
+	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alaveri.Globalization.Test", "Alaveri.Globalization.Test\Alaveri.Globalization.Test.csproj", "{39861A06-C31A-45DD-B40B-C50AD90873F0}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alaveri.Wpf.Windows", "Alaveri.Wpf.Windows\Alaveri.Wpf.Windows.csproj", "{FABA2A0B-2963-4325-A57C-02B23589A6F7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{45825407-C211-419B-ADFD-D96C439F9A04} = {45825407-C211-419B-ADFD-D96C439F9A04}
 	EndProjectSection
 EndProject
 Global
@@ -99,10 +104,6 @@ Global
 		{0B0E590A-66C3-4FA1-9D29-1FF2845E0038}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0B0E590A-66C3-4FA1-9D29-1FF2845E0038}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0B0E590A-66C3-4FA1-9D29-1FF2845E0038}.Release|Any CPU.Build.0 = Release|Any CPU
-		{233F4C69-E2DC-45E1-9B7F-B8BD5C77C50A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{233F4C69-E2DC-45E1-9B7F-B8BD5C77C50A}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{233F4C69-E2DC-45E1-9B7F-B8BD5C77C50A}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{233F4C69-E2DC-45E1-9B7F-B8BD5C77C50A}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8974F8AD-EF96-49AC-A605-E51B88B511AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8974F8AD-EF96-49AC-A605-E51B88B511AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8974F8AD-EF96-49AC-A605-E51B88B511AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -123,6 +124,14 @@ Global
 		{10A8A519-A297-4024-AAC4-7B7221E14C87}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{10A8A519-A297-4024-AAC4-7B7221E14C87}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{10A8A519-A297-4024-AAC4-7B7221E14C87}.Release|Any CPU.Build.0 = Release|Any CPU
+		{39861A06-C31A-45DD-B40B-C50AD90873F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{39861A06-C31A-45DD-B40B-C50AD90873F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{39861A06-C31A-45DD-B40B-C50AD90873F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{39861A06-C31A-45DD-B40B-C50AD90873F0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FABA2A0B-2963-4325-A57C-02B23589A6F7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FABA2A0B-2963-4325-A57C-02B23589A6F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FABA2A0B-2963-4325-A57C-02B23589A6F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FABA2A0B-2963-4325-A57C-02B23589A6F7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
