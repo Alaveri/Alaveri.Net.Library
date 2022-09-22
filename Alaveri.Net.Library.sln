@@ -65,7 +65,10 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "License", "License", "{5C63
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alaveri.Globalization.Test", "Alaveri.Globalization.Test\Alaveri.Globalization.Test.csproj", "{39861A06-C31A-45DD-B40B-C50AD90873F0}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alaveri.WPF.Windows", "Alaveri.Wpf.Windows\Alaveri.WPF.Windows.csproj", "{FABA2A0B-2963-4325-A57C-02B23589A6F7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alaveri.Wpf.Windows", "Alaveri.Wpf.Windows\Alaveri.Wpf.Windows.csproj", "{FABA2A0B-2963-4325-A57C-02B23589A6F7}"
+	ProjectSection(ProjectDependencies) = postProject
+		{45825407-C211-419B-ADFD-D96C439F9A04} = {45825407-C211-419B-ADFD-D96C439F9A04}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
