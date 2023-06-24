@@ -1,4 +1,3 @@
-using FluentAssertions;
 using Alaveri.Globalization.Development;
 
 namespace Alaveri.Globalization.Test;
