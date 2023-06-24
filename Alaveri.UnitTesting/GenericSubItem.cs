@@ -14,7 +14,7 @@
         /// <summary>
         /// The name of this test item.
         /// </summary>
-        public string? Name { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
         /// Initializes a new instance of the GenericSubItem class using the specified id and name.

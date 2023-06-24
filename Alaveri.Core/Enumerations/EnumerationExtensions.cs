@@ -13,7 +13,7 @@ namespace Alaveri.Core.Enumerations
         /// <typeparam name="TAttribute">The type of attribute to find.</typeparam>
         /// <param name="value">The enum value to use.</param>
         /// <returns>The attribute of the specified type and enum value, or null if none found.</returns>
-        public static TAttribute? GetAttribute<TAttribute>(this Enum value) where TAttribute : System.Attribute
+        public static TAttribute GetAttribute<TAttribute>(this Enum value) where TAttribute : System.Attribute
         {
             return EnumHelper.GetEnumAttribute<TAttribute>(value);
         }
@@ -23,7 +23,7 @@ namespace Alaveri.Core.Enumerations
         /// </summary>
         /// <param name="value">The enumeration value to find.</param>
         /// <returns>The EnumDescriptor attribute, or null if none found.</returns>
-        public static EnumDescriptorAttribute? GetDescriptor(this Enum value)
+        public static EnumDescriptorAttribute GetDescriptor(this Enum value)
         {
             return EnumHelper.GetDescriptor(value);
         }

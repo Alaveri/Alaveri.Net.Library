@@ -30,7 +30,7 @@ namespace Alaveri.Data
         /// <summary>
         /// The transaction used for this query.
         /// </summary>
-        public virtual IDbTransaction? Transaction { get; set; }
+        public virtual IDbTransaction Transaction { get; set; }
 
         /// <summary>
         /// If true, string parameters will be truncated to the parameter's size.

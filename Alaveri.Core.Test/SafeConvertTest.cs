@@ -16,7 +16,7 @@ namespace Alaveri.Core.Test
         [TestMethod]
         public void ToBoolTest()
         {
-            string? boolString = "y";
+            string boolString = "y";
             var value = SafeConvert.ToBoolean(boolString);
             value.Should().BeTrue();
 

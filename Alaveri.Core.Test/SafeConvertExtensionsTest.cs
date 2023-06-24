@@ -21,7 +21,7 @@ namespace Alaveri.Core.Test
         [TestMethod]
         public void AsBoolTest()
         {
-            string? boolString = "y";
+            string boolString = "y";
             var value = boolString.AsBoolean();
             value.Should().BeTrue();
 
@@ -219,7 +219,7 @@ namespace Alaveri.Core.Test
             var value = test.AsString(null);
             value.Should().Be("12");
 
-            object? obj = null;
+            object obj = null;
             value = obj.AsString("Something");
             value.Should().Be("Something");
 

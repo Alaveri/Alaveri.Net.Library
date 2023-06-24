@@ -14,7 +14,7 @@ namespace Alaveri.Data
         /// <param name="name">The name of this transaction.</param>
         /// <param name="isolationLevel">The isolation level of the transaction.</param>
         /// <returns>the new transaction.</returns>
-        IDbTransaction? BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.Unspecified, string name = "");
+        IDbTransaction BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.Unspecified, string name = "");
 
         /// <summary>
         /// If true, the accessor will truncate the length of string paramters to the specified
@@ -25,7 +25,7 @@ namespace Alaveri.Data
         /// <summary>
         /// The connection to the database.
         /// </summary>
-        DbConnection? Connection { get; }
+        DbConnection Connection { get; }
 
         /// <summary>
         /// The connection string used to access the database.

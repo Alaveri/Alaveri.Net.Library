@@ -11,7 +11,7 @@ namespace Alaveri.Data
         /// <summary>
         /// The connection used to access the database.
         /// </summary>
-        IDbConnection? Connection { get;  }
+        IDbConnection Connection { get;  }
 
         /// <summary>
         /// The options used to execute the query.
@@ -59,7 +59,7 @@ namespace Alaveri.Data
         /// </summary>
         /// <typeparam name="TResult">The type of the value to be returned.</typeparam>
         /// <returns>Thefirst item in the result set.</returns>
-        TResult? ExecuteScalar<TResult>();
+        TResult ExecuteScalar<TResult>();
 
         /// <summary>
         /// Executes the query with no reult set returned.

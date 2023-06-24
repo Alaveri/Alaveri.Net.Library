@@ -14,7 +14,7 @@ namespace Alaveri.Core.Enumerations
         /// <typeparam name="TAttribute">The type of attribute to find.</typeparam>
         /// <param name="value">The enum value to find.</param>
         /// <returns>The attribute of the specified type and enum value, or null if none found.</returns>
-        public static TAttribute? GetEnumAttribute<TAttribute>(Enum value) where TAttribute : Attribute
+        public static TAttribute GetEnumAttribute<TAttribute>(Enum value) where TAttribute : Attribute
         {
             var type = value.GetType();
             var info = type.GetMember(value.ToString());
@@ -29,7 +29,7 @@ namespace Alaveri.Core.Enumerations
         /// </summary>
         /// <param name="value">The enumeration value to find.</param>
         /// <returns>The EnumDescriptor attribute of the specified enum value, or null if none found.</returns>
-        public static EnumDescriptorAttribute? GetDescriptor(Enum value)
+        public static EnumDescriptorAttribute GetDescriptor(Enum value)
         {
             return GetEnumAttribute<EnumDescriptorAttribute>(value);
         }
@@ -39,7 +39,7 @@ namespace Alaveri.Core.Enumerations
         /// </summary>
         /// <param name="enumValue">The enum value to use.</param>
         /// <returns>The value of the Identifier or null if not found.</returns>
-        public static string? GetIdentifier(Enum enumValue)
+        public static string GetIdentifier(Enum enumValue)
         {
             return GetEnumAttribute<EnumDescriptorAttribute>(enumValue)?.Identifier;
         }
@@ -49,7 +49,7 @@ namespace Alaveri.Core.Enumerations
         /// </summary>
         /// <param name="enumValue">The enum value to use.</param>
         /// <returns>The value of the Description or null if not found.</returns>
-        public static string? GetDescription(Enum enumValue)
+        public static string GetDescription(Enum enumValue)
         {
             return GetEnumAttribute<EnumDescriptorAttribute>(enumValue)?.Description;
         }
@@ -59,7 +59,7 @@ namespace Alaveri.Core.Enumerations
         /// </summary>
         /// <param name="enumValue">The enum value to use.</param>
         /// <returns>The value of the AdditionalData or null if not found.</returns>
-        public static string? GetAdditionalData(Enum enumValue)
+        public static string GetAdditionalData(Enum enumValue)
         {
             return GetEnumAttribute<EnumDescriptorAttribute>(enumValue)?.AdditionalData;
         }
@@ -82,7 +82,7 @@ namespace Alaveri.Core.Enumerations
         /// </summary>
         /// <typeparam name="TEnum">The enumerable type.</typeparam>
         /// <returns>The identifier and value combinations of the enum.</returns>
-        public static IDictionary<TEnum, string?>? GetValuesAndIdentifiers<TEnum>() where TEnum : struct, Enum
+        public static IDictionary<TEnum, string> GetValuesAndIdentifiers<TEnum>() where TEnum : struct, Enum
         {
             return Enum.GetValues(typeof(TEnum))
                 .Cast<TEnum>()
@@ -98,6 +98,18 @@ namespace Alaveri.Core.Enumerations
         public static bool HasAttribute<TAttribute>(Enum enumValue) where TAttribute: Attribute
         {
             return GetEnumAttribute<TAttribute>(enumValue) != null;
-        }            
+        }
+
+        /// <summary>
+        /// Gets the values and descriptions of an enum type where the enum values are decorated with an EnumDescriptor attribute as a Dictionary.   
+        /// </summary>
+        /// <typeparam name="TEnum">The enumerable type.</typeparam>
+        /// <returns>The identifier and value combinations of the enum.</returns>
+        public static IDictionary<TEnum, string> GetValuesAndDescriptions<TEnum>() where TEnum : struct, Enum
+        {
+            return Enum.GetValues(typeof(TEnum))
+                .Cast<TEnum>()
+                .ToDictionary(value => value, value => GetDescription(value));
+        }
     }
 }

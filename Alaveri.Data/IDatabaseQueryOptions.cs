@@ -20,7 +20,7 @@ namespace Alaveri.Data
         /// <summary>
         /// The transaction used for this query.
         /// </summary>
-        IDbTransaction? Transaction { get; set; }
+        IDbTransaction Transaction { get; set; }
 
         /// <summary>
         /// The type of command used for this query.

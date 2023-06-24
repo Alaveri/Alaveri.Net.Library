@@ -15,7 +15,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="defaultValue">The default value of the value is invalid.</param>
         /// <param name="culture">The culture used for culture-specific formatting information during conversions.</param>
         /// <returns>The convrerted value or the default.</returns>
-        public static TResult? ChangeType<TResult>(this object? value, TResult defaultValue, CultureInfo culture) where TResult : IConvertible
+        public static TResult ChangeType<TResult>(this object value, TResult defaultValue, CultureInfo culture) where TResult : IConvertible
         {
             return SafeConvert.ChangeType(value, defaultValue, culture);
         }
@@ -28,7 +28,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value of the value is invalid.</param>
         /// <returns>The converted value or the default.</returns>
-        public static TResult? ChangeType<TResult>(this object? value, TResult defaultValue) where TResult : IConvertible
+        public static TResult ChangeType<TResult>(this object value, TResult defaultValue) where TResult : IConvertible
         {
             return SafeConvert.ChangeType(value, defaultValue, CultureInfo.CurrentCulture);
         }
@@ -40,7 +40,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value of the value is invalid.</param>
         /// <returns>The converted value or the default.</returns>
-        public static TResult? ConvertObject<TResult>(this object? value, TResult defaultValue) where TResult : IConvertible
+        public static TResult ConvertObject<TResult>(this object value, TResult defaultValue) where TResult : IConvertible
         {
             return SafeConvert.ConvertObject(value, defaultValue);
         }
@@ -51,7 +51,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>The converted object or the default.</returns>
-        public static short AsInt16(this object? value, short defaultValue = default)
+        public static short AsInt16(this object value, short defaultValue = default)
         {
             return SafeConvert.ToInt16(value, defaultValue);
         }
@@ -62,7 +62,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>The converted object or the default.</returns>
-        public static int AsInt32(this object? value, int defaultValue = default)
+        public static int AsInt32(this object value, int defaultValue = default)
         {
             return SafeConvert.ToInt32(value, defaultValue);
         }
@@ -73,7 +73,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>The converted object or the default.</returns>
-        public static long AsInt64(this object? value, long defaultValue = default)
+        public static long AsInt64(this object value, long defaultValue = default)
         {
             return SafeConvert.ToInt64(value, defaultValue);
         }
@@ -84,7 +84,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>The converted object or the default.</returns>
-        public static ushort AsUInt16(this object? value, ushort defaultValue = default)
+        public static ushort AsUInt16(this object value, ushort defaultValue = default)
         {
             return SafeConvert.ToUInt16(value, defaultValue);
         }
@@ -95,7 +95,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>The converted object or the default.</returns>
-        public static uint AsUInt32(this object? value, uint defaultValue = default)
+        public static uint AsUInt32(this object value, uint defaultValue = default)
         {
             return SafeConvert.ToUInt32(value, defaultValue);
         }
@@ -106,7 +106,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>The converted object or the default.</returns>
-        public static ulong AsUInt64(this object? value, ulong defaultValue = default)
+        public static ulong AsUInt64(this object value, ulong defaultValue = default)
         {
             return SafeConvert.ToUInt64(value, defaultValue);
         }
@@ -117,7 +117,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>The converted object or the default.</returns>
-        public static float AsSingle(this object? value, float defaultValue = default)
+        public static float AsSingle(this object value, float defaultValue = default)
         {
             return SafeConvert.ToSingle(value, defaultValue);
         }
@@ -128,7 +128,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>The converted object or the default.</returns>
-        public static double AsDouble(this object? value, double defaultValue = default)
+        public static double AsDouble(this object value, double defaultValue = default)
         {
             return SafeConvert.ToDouble(value, defaultValue);
         }
@@ -139,7 +139,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>The converted object or the default.</returns>
-        public static string AsString(this object? value, string? defaultValue = default)
+        public static string AsString(this object value, string defaultValue = default)
         {
             return SafeConvert.ToString(value, defaultValue);
         }
@@ -150,7 +150,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>The converted object or the default.</returns>
-        public static DateTime AsDateTime(this object? value, DateTime defaultValue = default)
+        public static DateTime AsDateTime(this object value, DateTime defaultValue = default)
         {
             return SafeConvert.ToDateTime(value, defaultValue);
         }
@@ -161,7 +161,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>The converted object or the default.</returns>
-        public static bool AsBoolean(this object? value, bool defaultValue = default)
+        public static bool AsBoolean(this object value, bool defaultValue = default)
         {
             return SafeConvert.ToBoolean(value, defaultValue);
         }
@@ -172,7 +172,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>The converted object or the default.</returns>
-        public static byte AsByte(this object? value, byte defaultValue = default)
+        public static byte AsByte(this object value, byte defaultValue = default)
         {
             return SafeConvert.ToByte(value, defaultValue);
         }
@@ -183,7 +183,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>The converted object or the default.</returns>
-        public static char AsChar(this object? value, char defaultValue = default)
+        public static char AsChar(this object value, char defaultValue = default)
         {
             return SafeConvert.ToChar(value, defaultValue);
         }
@@ -194,7 +194,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>The converted object or the default.</returns>
-        public static decimal AsDecimal(this object? value, decimal defaultValue = default)
+        public static decimal AsDecimal(this object value, decimal defaultValue = default)
         {
             return SafeConvert.ToDecimal(value, defaultValue);
         }
@@ -205,7 +205,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>The converted object or the default.</returns>
-        public static sbyte AsSByte(this object? value, sbyte defaultValue = default)
+        public static sbyte AsSByte(this object value, sbyte defaultValue = default)
         {
             return SafeConvert.ToSByte(value, defaultValue);
         }

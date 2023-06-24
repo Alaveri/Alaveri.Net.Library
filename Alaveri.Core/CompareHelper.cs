@@ -15,7 +15,7 @@ namespace Alaveri.Core
         /// <param name="sequence">The sequence to search.</param>
         /// <param name="comparer">An optional comparer used to compare items in the sequence to the value.</param>
         /// <returns>True of the value is in the sequence.</returns>
-        public static bool InSequence<TValue>(TValue? value, IEnumerable<TValue> sequence, IComparer<TValue>? comparer = null)
+        public static bool InSequence<TValue>(TValue value, IEnumerable<TValue> sequence, IComparer<TValue> comparer = null)
         {
             return sequence.Any(item => (comparer?.Compare(item, value) ?? item?.Equals(value).AsInt32() ?? 0) == 0);;
         }
@@ -28,7 +28,7 @@ namespace Alaveri.Core
         /// <param name="sequence">The sequence to search.</param>
         /// <param name="comparer">An optional comparer used to compare items in the sequence to the value.</param>
         /// <returns>True of the value is in the sequence.</returns>
-        public static bool InSequence<TValue>(TValue value, IComparer<TValue>? comparer = null, params TValue[] sequence)
+        public static bool InSequence<TValue>(TValue value, IComparer<TValue> comparer = null, params TValue[] sequence)
         {
             return InSequence(value, sequence, comparer);
         }
@@ -62,7 +62,7 @@ namespace Alaveri.Core
         /// <param name="comparisonType">An optional comparison type used to compare strings in the sequence to the value.
         /// If none is provided, the comparison defaults to OrdinalIgnoreCase.</param>
         /// <returns>True of the value is in the sequenceist.</returns>
-        public static bool StringInSequence(string? value, IEnumerable<string> sequence, StringComparison? comparisonType = null)
+        public static bool StringInSequence(string value, IEnumerable<string> sequence, StringComparison? comparisonType = null)
         { 
             return InSequence<string>(value, sequence, GetStringComparer(comparisonType));
         }
@@ -88,7 +88,7 @@ namespace Alaveri.Core
         /// <param name="comparer">An optional comparer used to compare items in the sequence to the value.</param>
         /// <returns>True of the value is in the list.</returns>
         /// <exception cref="ArgumentNullException">Sequence cannot be null.</exception>
-        public static bool InSequenceBinary<TResult>(TResult value, List<TResult> sequence, IComparer<TResult>? comparer = null)
+        public static bool InSequenceBinary<TResult>(TResult value, List<TResult> sequence, IComparer<TResult> comparer = null)
         {
             return sequence.BinarySearch(value, comparer) >= 0;
         }

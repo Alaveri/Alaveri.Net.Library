@@ -22,7 +22,7 @@ namespace Alaveri.Data
         /// <summary>
         /// The connection to the database.
         /// </summary>
-        public DbConnection? Connection { get; protected set; }
+        public DbConnection Connection { get; protected set; }
 
         /// <summary>
         /// The connection string used to access the database.
@@ -38,7 +38,7 @@ namespace Alaveri.Data
         /// The transaction used for queries. Note: use CreateTransaction() to create a transaction
         /// appropriate to this accessor type.
         /// </summary>
-        public virtual DbTransaction? Transaction { get; set; }
+        public virtual DbTransaction Transaction { get; set; }
 
         /// <summary>
         /// Starts a transaction.
@@ -46,7 +46,7 @@ namespace Alaveri.Data
         /// <param name="name">The name of this transaction.</param>
         /// <param name="isolationLevel">The isolation level of the transaction.</param>
         /// <returns>the new transaction.</returns>
-        public abstract IDbTransaction? BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.Unspecified, string name = "");    
+        public abstract IDbTransaction BeginTransaction(IsolationLevel isolationLevel = IsolationLevel.Unspecified, string name = "");    
 
         /// <summary>
         /// Perform disposal of managed resources.

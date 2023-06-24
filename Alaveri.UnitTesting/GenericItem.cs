@@ -14,7 +14,7 @@
         /// <summary>
         /// A test string property.
         /// </summary>
-        public string? StringProperty { get; set; }
+        public string StringProperty { get; set; }
 
         /// <summary>
         /// A test Int32 property

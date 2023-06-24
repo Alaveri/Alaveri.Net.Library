@@ -1,52 +1,52 @@
 ﻿using Newtonsoft.Json;
 using System.Xml.Serialization;
-#if WINDOWS
-using Windows.Graphics;
 using Microsoft.UI.Windowing;
-#endif
 
 namespace Alaveri.Maui.Windows
 {
     /// <summary>
-    /// Represents the state of a Form, including position, location and WindowState.
+    /// Represents the state of a window, including position, location and state.
     /// </summary>
     public class WindowState
     {
-#if WINDOWS
         /// <summary>
-        /// The window linked to this state.
+        /// Gets or sets the window.
         /// </summary>
         [JsonIgnore]
         [XmlIgnore]
-        public AppWindow Window { get; set; }
+        public Window Window { get; set; }
 
         /// <summary>
-        /// The location of the window.
+        /// Gets or sets the application window.
         /// </summary>
-#pragma warning disable CA1416 // Validate platform compatibility
-        public PointInt32 Position { get; set; } = new PointInt32(int.MaxValue, int.MaxValue);
-#pragma warning restore CA1416 // Validate platform compatibility
+        [JsonIgnore]
+        [XmlIgnore]        
+        public AppWindow AppWindow { get; set; }
+
+        /// <summary>
+        /// Gets or sets the window's position.
+        /// </summary>
+        public (double X, double Y) Position { get; set; } = (int.MaxValue, int.MaxValue);
 
         /// <summary>
         /// The size of the window.
         /// </summary>
-        public SizeInt32 Size { get; set; }
+        public (double Width, double Height) Size { get; set; }
 
         /// <summary>
         /// The location of the window when not maximized.
         /// </summary>
-        public PointInt32 RestoredPosition { get; set; }
+        public (double X, double Y) RestoredPosition { get; set; }
 
         /// <summary>
         /// The size of the window.
         /// </summary>
-        public SizeInt32 RestoredSize { get; set; }
+        public (double Width, double Height) RestoredSize { get; set; }
 
         /// <summary>
-        /// The form's window state.
+        /// True if the window is maximized.
         /// </summary>
-        public OverlappedPresenterState State { get; set; } = OverlappedPresenterState.Restored;
-#endif
+        public bool Maximized { get; set; } = false;
 
         /// <summary>
         /// True if this state has been initialized.
@@ -59,27 +59,15 @@ namespace Alaveri.Maui.Windows
         public void StoreWindowState()
         {
 #if WINDOWS
-            var presenter = Window.Presenter as OverlappedPresenter;
+#pragma warning disable CA1416 // Validate platform compatibility
+
+            Position = (Window.X, Window.Y);
+            Size = (Window.Width, Window.Height);
+            var presenter = AppWindow.Presenter as OverlappedPresenter;
             if (presenter == null)
                 return;
-            Position = Window.Position;
-            Size = Window.Size;
-            switch (presenter.State)
-            {
-                case OverlappedPresenterState.Restored:
-                    RestoredPosition = Window.Position;
-                    RestoredSize = Window.Size;
-                    State = OverlappedPresenterState.Restored;
-                    break;
-                case OverlappedPresenterState.Maximized:
-                    State = OverlappedPresenterState.Maximized;
-                    break;
-                case OverlappedPresenterState.Minimized:
-                    RestoredPosition = Window.Position;
-                    RestoredSize = Window.Size;
-                    State = OverlappedPresenterState.Restored;
-                    break;
-            }
+            Maximized = presenter.State == OverlappedPresenterState.Maximized;
+#pragma warning restore CA1416 // Validate platform compatibility
 #endif
         }
 
@@ -89,16 +77,21 @@ namespace Alaveri.Maui.Windows
         public void RestoreWindowState()
         {
 #if WINDOWS
-            var presenter = Window.Presenter as OverlappedPresenter;
+#pragma warning disable CA1416 // Validate platform compatibility
+            var presenter = AppWindow.Presenter as OverlappedPresenter;
             if (presenter == null)
                 return;
-#pragma warning disable CA1416 // Validate platform compatibility
             if (Position.X != int.MaxValue && Position.Y != int.MaxValue)
-                Window.Move(Position);
-#pragma warning restore CA1416 // Validate platform compatibility
-            Window.Resize(Size);
-            if (State == OverlappedPresenterState.Maximized)
+            {
+                Window.X = Position.X;
+                Window.Y = Position.Y;
+            }
+            Window.Width = Size.Width;
+            Window.Height = Size.Height;
+
+            if (Maximized)
                 presenter.Maximize();
+#pragma warning restore CA1416 // Validate platform compatibility
 #endif
         }
 
@@ -107,9 +100,10 @@ namespace Alaveri.Maui.Windows
         /// Initializes a new instance of the WindowState class using the specified AppWindow and initial size.
         /// </summary>
         /// <param name="window">The window to link to this state.</param>
-        public WindowState(AppWindow window, SizeInt32 initialSize = default)
+        public WindowState(Window window, AppWindow appWindow, (double X, double Y) initialSize = default)
         {
             Window = window;
+            AppWindow = appWindow;
             Size = initialSize;
         }
 #endif

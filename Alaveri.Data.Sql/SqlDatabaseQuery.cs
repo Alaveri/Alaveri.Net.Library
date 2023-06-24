@@ -121,11 +121,11 @@ namespace Alaveri.Data.Sql
         /// <typeparam name="TResult">The type of the value to be returned.</typeparam>
         /// <returns>The first item in the result set.</returns>
         /// 
-        public override async Task<TResult?> ExecuteScalarAsync<TResult>() where TResult: class
+        public override async Task<TResult> ExecuteScalarAsync<TResult>() where TResult: class
         {
             using var command = PrepareCommand(Options);
             var result = await command.ExecuteScalarAsync().ConfigureAwait(false);
-            return (TResult?)result;
+            return (TResult)result;
         }
 
         /// <summary>
@@ -168,7 +168,7 @@ namespace Alaveri.Data.Sql
         /// Initializes a new instance of the DatabaseQuery class using the specified connection.
         /// </summary>
         /// <param name="connection">The connection used to access the database.</param>
-        public SqlDatabaseQuery(IDbConnection? connection) : base(connection)
+        public SqlDatabaseQuery(IDbConnection connection) : base(connection)
         {
         }
     }

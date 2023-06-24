@@ -47,12 +47,6 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alaveri.Windows.Forms", "Al
 		{0B0E590A-66C3-4FA1-9D29-1FF2845E0038} = {0B0E590A-66C3-4FA1-9D29-1FF2845E0038}
 	EndProjectSection
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alaveri.Maui.Windows", "Alaveri.Maui.Windows\Alaveri.Maui.Windows.csproj", "{10A8A519-A297-4024-AAC4-7B7221E14C87}"
-	ProjectSection(ProjectDependencies) = postProject
-		{45825407-C211-419B-ADFD-D96C439F9A04} = {45825407-C211-419B-ADFD-D96C439F9A04}
-		{4E58A63D-7DCA-4DA2-BFE9-05FEBA448A7A} = {4E58A63D-7DCA-4DA2-BFE9-05FEBA448A7A}
-	EndProjectSection
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{8B017D45-1757-4EAA-AD06-DBB949AB0A4D}"
 	ProjectSection(SolutionItems) = preProject
 		readme.txt = readme.txt
@@ -69,6 +63,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alaveri.Wpf.Windows", "Alav
 	ProjectSection(ProjectDependencies) = postProject
 		{45825407-C211-419B-ADFD-D96C439F9A04} = {45825407-C211-419B-ADFD-D96C439F9A04}
 	EndProjectSection
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alaveri.Avalonia", "Alaveri.Avalonia\Alaveri.Avalonia.csproj", "{0DD5310E-163A-4590-BB96-100F63CA6D19}"
+	ProjectSection(ProjectDependencies) = postProject
+		{45825407-C211-419B-ADFD-D96C439F9A04} = {45825407-C211-419B-ADFD-D96C439F9A04}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alaveri.Maui.Windows", "Alaveri.Maui.Windows\Alaveri.Maui.Windows.csproj", "{9B5778FF-9A03-4BA4-8212-3D6EB2FA0512}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -120,10 +121,6 @@ Global
 		{451AA6D8-C323-438A-B1E8-65FD00B23FCA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{451AA6D8-C323-438A-B1E8-65FD00B23FCA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{451AA6D8-C323-438A-B1E8-65FD00B23FCA}.Release|Any CPU.Build.0 = Release|Any CPU
-		{10A8A519-A297-4024-AAC4-7B7221E14C87}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{10A8A519-A297-4024-AAC4-7B7221E14C87}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{10A8A519-A297-4024-AAC4-7B7221E14C87}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{10A8A519-A297-4024-AAC4-7B7221E14C87}.Release|Any CPU.Build.0 = Release|Any CPU
 		{39861A06-C31A-45DD-B40B-C50AD90873F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{39861A06-C31A-45DD-B40B-C50AD90873F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{39861A06-C31A-45DD-B40B-C50AD90873F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
@@ -132,6 +129,14 @@ Global
 		{FABA2A0B-2963-4325-A57C-02B23589A6F7}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FABA2A0B-2963-4325-A57C-02B23589A6F7}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FABA2A0B-2963-4325-A57C-02B23589A6F7}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DD5310E-163A-4590-BB96-100F63CA6D19}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DD5310E-163A-4590-BB96-100F63CA6D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DD5310E-163A-4590-BB96-100F63CA6D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DD5310E-163A-4590-BB96-100F63CA6D19}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9B5778FF-9A03-4BA4-8212-3D6EB2FA0512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9B5778FF-9A03-4BA4-8212-3D6EB2FA0512}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9B5778FF-9A03-4BA4-8212-3D6EB2FA0512}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9B5778FF-9A03-4BA4-8212-3D6EB2FA0512}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

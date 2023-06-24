@@ -11,7 +11,7 @@ namespace Alaveri.Data
         /// <summary>
         /// The connection used to access the database.
         /// </summary>
-        public virtual IDbConnection? Connection { get; protected set; }
+        public virtual IDbConnection Connection { get; protected set; }
 
         /// <summary>
         /// The options used to execute the query.
@@ -59,14 +59,14 @@ namespace Alaveri.Data
         /// </summary>
         /// <typeparam name="TResult">The type of the value to be returned.</typeparam>
         /// <returns>The first item in the result set.</returns>
-        public abstract TResult? ExecuteScalar<TResult>();
+        public abstract TResult ExecuteScalar<TResult>();
 
         /// <summary>
         /// Executes the query and returns the first item in the result set as type TResult.
         /// </summary>
         /// <typeparam name="TResult">The type of the value to be returned.</typeparam>
         /// <returns>The first item in the result set.</returns>
-        public abstract Task<TResult?> ExecuteScalarAsync<TResult>() where TResult : class;
+        public abstract Task<TResult> ExecuteScalarAsync<TResult>() where TResult : class;
 
         /// <summary>
         /// Executes the query with no reult set returned.
@@ -166,7 +166,7 @@ namespace Alaveri.Data
         /// Initializes a new instance of the DatabaseQuery class using the specified connection.
         /// </summary>
         /// <param name="connection">The connection used to access the database.</param>
-        public DatabaseQuery(IDbConnection? connection)
+        public DatabaseQuery(IDbConnection connection)
         {
             Connection = connection;
             Options = new DatabaseQueryOptions();

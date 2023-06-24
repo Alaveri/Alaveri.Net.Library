@@ -11,7 +11,7 @@ namespace Alaveri.Core
         /// Creates an ArgumentNullException with a translated message.
         /// </summary>
         /// <param name="obj">The null argument used to generate the exception message.</param>
-        public static ArgumentNullException CreateArgumentNullException(object? obj)
+        public static ArgumentNullException CreateArgumentNullException(object obj)
         {
             return new ArgumentNullException(DevTranslator.Current.TranslateFormat("ArgumentNullMessage", obj?.GetType().Name ?? string.Empty));
         }
