@@ -40,7 +40,7 @@ public abstract class Configuration : IConfiguration
     /// </summary>
     [JsonIgnore]
     [XmlIgnore]
-    public string ConfigurationFilename { get; set; }
+    public string ConfigurationFilename { get; set; } = string.Empty;
 
     /// <summary>
     /// Gets or sets the serializer used to serialize the configuration.  Defaults to JSON with UTF8 encoding.
@@ -99,10 +99,12 @@ public abstract class Configuration : IConfiguration
     /// Saves the configuration to a file asynchronously.
     /// </summary>
     /// <param name="stream">The name of the file to write.</param>
-    public async Task SaveToFileAsync(string filename, Encoding encoding)
+    public async Task SaveToFileAsync(string filename, Encoding? encoding)
     {
+        if (string.IsNullOrWhiteSpace(filename))
+            throw new ArgumentNullException(nameof(filename));
         var dir = Path.GetDirectoryName(filename);
-        if (!Directory.Exists(dir))
+        if (!string.IsNullOrWhiteSpace(dir) && !Directory.Exists(dir))
             Directory.CreateDirectory(dir);
         using var stream = new FileStream(filename, FileMode.Create, FileAccess.Write);
         await SaveToStreamAsync(stream);

@@ -29,7 +29,7 @@ namespace Alaveri.Configuration
         /// </summary>
         public static string GetConfigurationFilename(ConfigurationType type, string organizationName, string appName, string extension, string configurationName = "")
         {
-            return Path.Combine(GetConfigurationPath(type, organizationName, appName), string.IsNullOrWhiteSpace(configurationName) ? appName : configurationName + extension);
+            return Path.Combine(GetConfigurationPath(type, organizationName, appName), string.IsNullOrWhiteSpace(configurationName) ? appName : configurationName) + extension;
         }
 
         /// <summary>
@@ -128,7 +128,7 @@ namespace Alaveri.Configuration
         /// <param name="configurationName">The name of the configuration file.</param>
         /// <returns>A new configuration instance loaded from the stream, or a new empty configuration if the configuration file doesn't exist.</returns>
         public static async Task<TConfiguration> LoadAsync<TConfiguration>(ConfigurationType type, string organizationName, string appName, 
-            ConfigurationSerializer serializer = null, string configurationName = "") where TConfiguration : IConfiguration, new()
+            ConfigurationSerializer? serializer = null, string configurationName = "") where TConfiguration : IConfiguration, new()
         {
             serializer ??= new JsonConfigurationSerializer();
             var filename = GetConfigurationFilename(type, organizationName, appName, serializer.FileExtension, configurationName); 
@@ -156,7 +156,7 @@ namespace Alaveri.Configuration
         /// <param name="configurationName">The name of the configuration file.</param>
         /// <returns>A new configuration instance loaded from the stream, or a new empty configuration if the configuration file doesn't exist.</returns>
         public static TConfiguration Load<TConfiguration>(ConfigurationType type, string organizationName, string appName,
-            ConfigurationSerializer serializer = null, string configurationName = "") where TConfiguration : IConfiguration, new()
+            ConfigurationSerializer? serializer = null, string configurationName = "") where TConfiguration : IConfiguration, new()
         {
             serializer ??= new JsonConfigurationSerializer();
             var filename = GetConfigurationFilename(type, organizationName, appName, serializer.FileExtension, configurationName);

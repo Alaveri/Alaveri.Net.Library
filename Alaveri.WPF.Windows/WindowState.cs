@@ -1,7 +1,6 @@
 using Newtonsoft.Json;
 using System.Windows;
 using System.Xml.Serialization;
-using Windows.Graphics;
 
 namespace Alaveri.Wpf.Windows;
 

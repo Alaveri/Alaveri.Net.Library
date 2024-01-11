@@ -23,7 +23,7 @@ namespace Alaveri.Configuration
         /// Initializes a new instance of the <see cref="JsonConfigurationSerializer"/> class using the specified encoding.  Defaults to UTF8.
         /// </summary>
         /// <param name="encoding">The encoding.</param>
-        public JsonConfigurationSerializer(Encoding encoding = null)
+        public JsonConfigurationSerializer(Encoding? encoding = null)
         {
             encoding ??= Encoding.UTF8;
             Encoding = encoding;
@@ -48,7 +48,7 @@ namespace Alaveri.Configuration
         /// <returns>a deserialized Configuration object of type <typeparamref name="TConfiguration" />.</returns>
         public override TConfiguration DeserializeConfigurationData<TConfiguration>(byte[] configurationData)
         {
-            return JsonConvert.DeserializeObject<TConfiguration>(Encoding.GetString(configurationData));
+            return JsonConvert.DeserializeObject<TConfiguration>(Encoding.GetString(configurationData)) ?? new TConfiguration();
         }
 
     }

@@ -29,7 +29,7 @@ namespace Alaveri.Configuration
         /// <param name="defaultNamespace">The default namespace.</param>
         /// <param name="namespaces">The namespaces to include in the XML.</param>
         /// <param name="extraTypes">The extra types to serialize.</param>
-        public XmlConfigurationSerializer(Encoding encoding = null, string defaultNamespace = null, XmlSerializerNamespaces namespaces = null, IEnumerable<Type> extraTypes = null)
+        public XmlConfigurationSerializer(Encoding? encoding = null, string? defaultNamespace = null, XmlSerializerNamespaces? namespaces = null, IEnumerable<Type>? extraTypes = null)
         {
             encoding ??= Encoding.UTF8;
             DefaultNamespace = defaultNamespace;
@@ -43,21 +43,21 @@ namespace Alaveri.Configuration
         /// </summary>
         [JsonIgnore]
         [XmlIgnore]
-        public XmlSerializerNamespaces Namespaces { get; set; }
+        public XmlSerializerNamespaces? Namespaces { get; set; }
 
         /// <summary>
         /// Gets or sets a type array of object types serialize.
         /// </summary>
         [JsonIgnore]
         [XmlIgnore]
-        IEnumerable<Type> ExtraTypes { get; }
+        IEnumerable<Type>? ExtraTypes { get; }
 
         /// <summary>
         /// Gets or sets defualt XML namespace.
         /// </summary>
         [JsonIgnore]
         [XmlIgnore]
-        string DefaultNamespace { get; }
+        string? DefaultNamespace { get; }
 
         /// <summary>
         /// Serializes a configuration into XML format.
@@ -84,7 +84,7 @@ namespace Alaveri.Configuration
         {
             var serializer = new XmlSerializer(typeof(TConfiguration), ExtraTypes?.ToArray());
             using var reader = new StringReader(Encoding.GetString(configurationData));
-            return (TConfiguration)serializer.Deserialize(reader);
+            return (TConfiguration)(serializer.Deserialize(reader) ?? new TConfiguration());
         }
     }
 }
