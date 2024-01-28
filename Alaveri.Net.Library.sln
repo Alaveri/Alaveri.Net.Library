@@ -50,6 +50,7 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Nuget", "Nuget", "{8B017D45-1757-4EAA-AD06-DBB949AB0A4D}"
 	ProjectSection(SolutionItems) = preProject
 		readme.txt = readme.txt
+		Alaveri.Maui\StoredWindowState.cs = Alaveri.Maui\StoredWindowState.cs
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "License", "License", "{5C63F580-906D-4DDB-883F-932D9FABD93E}"
@@ -69,7 +70,10 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Alaveri.Avalonia", "Alaveri
 		{45825407-C211-419B-ADFD-D96C439F9A04} = {45825407-C211-419B-ADFD-D96C439F9A04}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alaveri.Maui.Windows", "Alaveri.Maui.Windows\Alaveri.Maui.Windows.csproj", "{9B5778FF-9A03-4BA4-8212-3D6EB2FA0512}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Alaveri.Maui", "Alaveri.Maui\Alaveri.Maui.csproj", "{EDCFBFB1-2BBB-4F6D-8DE2-62A65AE2225C}"
+	ProjectSection(ProjectDependencies) = postProject
+		{45825407-C211-419B-ADFD-D96C439F9A04} = {45825407-C211-419B-ADFD-D96C439F9A04}
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -133,10 +137,10 @@ Global
 		{0DD5310E-163A-4590-BB96-100F63CA6D19}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DD5310E-163A-4590-BB96-100F63CA6D19}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DD5310E-163A-4590-BB96-100F63CA6D19}.Release|Any CPU.Build.0 = Release|Any CPU
-		{9B5778FF-9A03-4BA4-8212-3D6EB2FA0512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{9B5778FF-9A03-4BA4-8212-3D6EB2FA0512}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{9B5778FF-9A03-4BA4-8212-3D6EB2FA0512}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{9B5778FF-9A03-4BA4-8212-3D6EB2FA0512}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EDCFBFB1-2BBB-4F6D-8DE2-62A65AE2225C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EDCFBFB1-2BBB-4F6D-8DE2-62A65AE2225C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EDCFBFB1-2BBB-4F6D-8DE2-62A65AE2225C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EDCFBFB1-2BBB-4F6D-8DE2-62A65AE2225C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

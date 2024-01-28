@@ -10,13 +10,6 @@ namespace Alaveri.Wpf.Windows;
 public class StoredWindowState
 {
     /// <summary>
-    /// The window linked to this state.
-    /// </summary>
-    [JsonIgnore]
-    [XmlIgnore]
-    public Window Window { get; set; }
-
-    /// <summary>
     /// The location of the window.
     /// </summary>
     public Point Position { get; set; } = new Point(int.MaxValue, int.MaxValue);
@@ -49,25 +42,26 @@ public class StoredWindowState
     /// <summary>
     /// Stores the Window's state.
     /// </summary>
-    public void StoreWindowState()
+    /// <param name="window">The window to store.</param>
+    public void StoreWindowState(Window window)
     {
-        if (Window.WindowState != WindowState.Minimized)
+        if (window.WindowState != WindowState.Minimized)
         {
-            Position = new Point(Window.Left, Window.Top);
-            Size = new Size(Window.Width, Window.Height);
-            switch (Window.WindowState)
+            Position = new Point(window.Left, window.Top);
+            Size = new Size(window.Width, window.Height);
+            switch (window.WindowState)
             {
                 case WindowState.Normal:
-                    RestoredPosition = new Point(Window.Left, Window.Top);
-                    RestoredSize = new Size(Window.Width, Window.Height);
+                    RestoredPosition = new Point(window.Left, window.Top);
+                    RestoredSize = new Size(window.Width, window.Height);
                     WindowState = WindowState.Normal;
                     break;
                 case WindowState.Maximized:
                     WindowState = WindowState.Maximized;
                     break;
                 case WindowState.Minimized:
-                    RestoredPosition = new Point(Window.Left, Window.Top);
-                    RestoredSize = new Size(Window.Width, Window.Height);
+                    RestoredPosition = new Point(window.Left, window.Top);
+                    RestoredSize = new Size(window.Width, window.Height);
                     WindowState = WindowState.Normal;
                     break;
             }
@@ -77,26 +71,25 @@ public class StoredWindowState
     /// <summary>
     /// Restrores the Window state.
     /// </summary>
-    public void RestoreWindowState()
+    /// <param name="window">The window to restore.</param>
+    public void RestoreWindowState(Window window)
     {
         if (Position.X != int.MaxValue && Position.Y != int.MaxValue)
         {
-            Window.Left = Position.X;
-            Window.Top = Position.Y;
+            window.Left = Position.X;
+            window.Top = Position.Y;
         }
-        Window.Width = Size.Width;
-        Window.Height = Size.Height;
+        window.Width = Size.Width;
+        window.Height = Size.Height;
         if (WindowState == WindowState.Maximized)
-            Window.WindowState = WindowState.Maximized;
+            window.WindowState = WindowState.Maximized;
     }
 
     /// <summary>
     /// Initializes a new instance of the WindowState class using the specified Window and initial size.
     /// </summary>
-    /// <param name="window">The window to link to this state.</param>
-    public StoredWindowState(Window window, Size initialSize = default)
+    public StoredWindowState(Size initialSize = default)
     {
-        Window = window;
         Size = initialSize;
     }
 

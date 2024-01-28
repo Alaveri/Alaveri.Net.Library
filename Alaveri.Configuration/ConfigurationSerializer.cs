@@ -23,12 +23,6 @@ namespace Alaveri.Configuration
         public abstract string FileExtension { get; }
 
         /// <summary>
-        /// Gets or sets the configuration encoding.
-        /// </summary>
-        /// <value>The configuration encoding.</value>
-        public virtual Encoding Encoding { get; set; } = Encoding.UTF8;
-
-        /// <summary>
         /// Serializes a configuration.
         /// </summary>
         /// <param name="config">The configuration to serialize.</param>

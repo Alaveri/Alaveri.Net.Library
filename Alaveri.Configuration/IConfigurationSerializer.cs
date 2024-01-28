@@ -5,12 +5,6 @@ namespace Alaveri.Configuration
     public interface IConfigurationSerializer
     {
         /// <summary>
-        /// Gets or sets the configuration encoding.
-        /// </summary>
-        /// <value>The configuration encoding.</value>
-        Encoding Encoding { get; set; }
-
-        /// <summary>
         /// Gets the file extension for this serialization format.
         /// </summary>
         /// <value>The file extension for this serialization format.</value>

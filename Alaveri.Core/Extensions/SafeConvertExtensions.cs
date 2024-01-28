@@ -15,7 +15,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="defaultValue">The default value of the value is invalid.</param>
         /// <param name="culture">The culture used for culture-specific formatting information during conversions.</param>
         /// <returns>The convrerted value or the default.</returns>
-        public static TResult ChangeType<TResult>(this object value, TResult defaultValue, CultureInfo culture) where TResult : IConvertible
+        public static TResult? ChangeType<TResult>(this object value, TResult defaultValue, CultureInfo culture) where TResult : IConvertible
         {
             return SafeConvert.ChangeType(value, defaultValue, culture);
         }
@@ -28,7 +28,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value of the value is invalid.</param>
         /// <returns>The converted value or the default.</returns>
-        public static TResult ChangeType<TResult>(this object value, TResult defaultValue) where TResult : IConvertible
+        public static TResult? ChangeType<TResult>(this object value, TResult defaultValue) where TResult : IConvertible
         {
             return SafeConvert.ChangeType(value, defaultValue, CultureInfo.CurrentCulture);
         }
@@ -40,7 +40,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value of the value is invalid.</param>
         /// <returns>The converted value or the default.</returns>
-        public static TResult ConvertObject<TResult>(this object value, TResult defaultValue) where TResult : IConvertible
+        public static TResult? ConvertObject<TResult>(this object value, TResult defaultValue) where TResult : IConvertible
         {
             return SafeConvert.ConvertObject(value, defaultValue);
         }
@@ -139,7 +139,7 @@ namespace Alaveri.Core.Extensions.Conversion
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>The converted object or the default.</returns>
-        public static string AsString(this object value, string defaultValue = default)
+        public static string AsString(this object value, string? defaultValue = default)
         {
             return SafeConvert.ToString(value, defaultValue);
         }

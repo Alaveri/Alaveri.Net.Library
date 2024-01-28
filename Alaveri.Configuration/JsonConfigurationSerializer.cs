@@ -11,22 +11,21 @@ namespace Alaveri.Configuration
     /// Represents a configuration serializer that uses JSON serialization.
     /// </summary>
     /// <seealso cref="Alaveri.Configuration.ConfigurationSerializer" />
-    public class JsonConfigurationSerializer : ConfigurationSerializer
+    public class JsonConfigurationSerializer : TextConfigurationSerializer
     {
         /// <summary>
         /// Gets the file extension for this serialization format.
         /// </summary>
         /// <value>The file extension for this serialization format.</value>
-        public override string FileExtension { get => ".json"; }
+        public override string FileExtension => ".json";
+
 
         /// <summary>
         /// Initializes a new instance of the <see cref="JsonConfigurationSerializer"/> class using the specified encoding.  Defaults to UTF8.
         /// </summary>
-        /// <param name="encoding">The encoding.</param>
-        public JsonConfigurationSerializer(Encoding? encoding = null)
+        /// <param name="encoding">The encoding to use when serializing the configuration data.</param>
+        public JsonConfigurationSerializer(Encoding? encoding = null) : base(encoding)
         {
-            encoding ??= Encoding.UTF8;
-            Encoding = encoding;
         }
 
         /// <summary>

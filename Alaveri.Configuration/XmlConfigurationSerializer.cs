@@ -14,28 +14,28 @@ namespace Alaveri.Configuration
     /// Represents a configuration serializer that uses XML serialization.
     /// </summary>
     /// <seealso cref="Alaveri.Configuration.ConfigurationSerializer" />
-    public class XmlConfigurationSerializer : ConfigurationSerializer
+    public class XmlConfigurationSerializer : TextConfigurationSerializer
     {
         /// <summary>
         /// Gets the file extension for this serialization format.
         /// </summary>
         /// <value>The file extension for this serialization format.</value>
-        public override string FileExtension { get => ".xml"; }
+        public override string FileExtension => ".xml"; 
 
         /// <summary>
         /// Initializes a new instance of the <see cref="XmlConfigurationSerializer"/> class using the specified encoding default namespace, namespaces and extra types.  
         /// Defaults to UTF8.
         /// </summary>
+        /// <param name="encoding">The encoding to use while serializing the configuration data.</param>
         /// <param name="defaultNamespace">The default namespace.</param>
         /// <param name="namespaces">The namespaces to include in the XML.</param>
         /// <param name="extraTypes">The extra types to serialize.</param>
-        public XmlConfigurationSerializer(Encoding? encoding = null, string? defaultNamespace = null, XmlSerializerNamespaces? namespaces = null, IEnumerable<Type>? extraTypes = null)
+        public XmlConfigurationSerializer(Encoding? encoding = null, string? defaultNamespace = null, XmlSerializerNamespaces? namespaces = null, IEnumerable<Type>? extraTypes = null) 
+            : base(encoding)           
         {
-            encoding ??= Encoding.UTF8;
             DefaultNamespace = defaultNamespace;
             Namespaces = namespaces;
             ExtraTypes = extraTypes;
-            Encoding = encoding;
         }
 
         /// <summary>

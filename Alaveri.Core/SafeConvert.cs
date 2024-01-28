@@ -1,4 +1,5 @@
-﻿using System.Globalization;
+﻿using System.Diagnostics;
+using System.Globalization;
 
 namespace Alaveri.Core
 {
@@ -33,11 +34,10 @@ namespace Alaveri.Core
         /// <param name="defaultValue">The default value of the value is invalid.</param>
         /// <param name="culture">The culture used for culture-specific formatting information during conversions.</param>
         /// <returns>The convreted value or the default.</returns>
-        public static TResult ChangeType<TResult>(object value, TResult defaultValue, CultureInfo culture) where TResult : IConvertible
+        public static TResult? ChangeType<TResult>(object value, TResult? defaultValue, CultureInfo culture) where TResult : IConvertible
         {
             if (value == null || value == DBNull.Value)
                 return defaultValue;
-
             if (typeof(TResult) == typeof(bool))
             {
                 var val = value?.ToString()?.Trim();
@@ -71,7 +71,7 @@ namespace Alaveri.Core
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value of the value is invalid.</param>
         /// <returns>The converted value or the default.</returns>
-        public static TResult ChangeType<TResult>(object value, TResult defaultValue) where TResult : IConvertible
+        public static TResult? ChangeType<TResult>(object value, TResult? defaultValue) where TResult : IConvertible
         {
             return ChangeType(value, defaultValue, CultureInfo.CurrentCulture);
         }
@@ -83,7 +83,7 @@ namespace Alaveri.Core
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value of the value is invalid.</param>
         /// <returns>The converted value or the default.</returns>
-        public static TResult ConvertObject<TResult>(object value, TResult defaultValue) where TResult : IConvertible
+        public static TResult? ConvertObject<TResult>(object value, TResult defaultValue) where TResult : IConvertible
         {
             return ChangeType(value, defaultValue);
         }
@@ -190,7 +190,7 @@ namespace Alaveri.Core
         /// <param name="value">The value to convert.</param>
         /// <param name="defaultValue">The default value.</param>
         /// <returns>The converted object or the default.</returns>
-        public static string ToString(object value, string defaultValue = default)
+        public static string ToString(object value, string? defaultValue = default)
         {
             return ChangeType(value, defaultValue) ?? string.Empty;
         }

@@ -7,9 +7,8 @@ namespace Alaveri.Data.Test.Mocks
     {
         public int InternalId { get; set; }
 
-        public int SetGenericItem(GenericItem? item)
+        public int SetGenericItem(GenericItem item)
         {
-            item = item ?? throw ExceptionFactory.CreateArgumentNullException(item);
             InternalId = 1234;
             item.Id = 1234;
             return item.Id;
