@@ -2,12 +2,17 @@
 
 namespace Alaveri.Maui
 {
-    public partial class StoredWindowState
+    /// <summary>
+    /// Contains platform-specific stored window state information.
+    /// </summary>
+    /// <param name="initialWidth">The initial width of the window.</param>
+    /// <param name="initialHeight">The initial height of the window.</param>
+    public class StoredWindowState(double initialWidth, double initialHeight) : BaseStoredWindowState(initialWidth, initialHeight), IStoredWindowState
     {
         /// <summary>
         /// Restores the state of the window from the configuration.
         /// </summary>
-        public void RestoreWindowState()
+        public override void RestoreWindowState()
         {
             if (Window == null)
                 return;
@@ -20,7 +25,7 @@ namespace Alaveri.Maui
             Window.Height = Height;
         }
 
-        public void StoreWindowState()
+        public override void StoreWindowState()
         {
             if (Window == null)
                 return;

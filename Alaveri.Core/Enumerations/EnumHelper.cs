@@ -1,7 +1,4 @@
-﻿using Alaveri.Core.Extensions.Conversion;
-using System.Runtime.CompilerServices;
-
-namespace Alaveri.Core.Enumerations
+﻿namespace Alaveri.Core.Enumerations
 {
     /// <summary>
     /// Provides functions for working with Enums.

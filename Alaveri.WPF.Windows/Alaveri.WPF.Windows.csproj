@@ -3,7 +3,7 @@
         <PackageBuild>$([System.Environment]::GetEnvironmentVariable('Alaveri.BuildNumber', System.EnvironmentVariableTarget.User))</PackageBuild>
     </PropertyGroup>
     <PropertyGroup>
-        <TargetFramework>net7.0-windows</TargetFramework>
+        <TargetFramework>net8.0-windows7.0</TargetFramework>
         <Nullable>disable</Nullable>
         <SignAssembly>False</SignAssembly>
         <GeneratePackageOnBuild>True</GeneratePackageOnBuild>

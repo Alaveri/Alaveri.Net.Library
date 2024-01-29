@@ -1,13 +1,18 @@
-﻿using System;
+﻿using Newtonsoft.Json;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace Alaveri.Maui;
 
-public partial class StoredWindowState
+/// <summary>
+/// Contains the stored state of a window.
+/// </summary>
+/// <param name="initialWidth">The initial width of the window.</param>
+/// <param name="initialHeight">The initial height of the window.</param>
+public abstract class BaseStoredWindowState(double initialWidth, double initialHeight)
 {
     /// <summary>
     /// The window bound to this state.
@@ -18,42 +23,42 @@ public partial class StoredWindowState
     /// <summary>
     /// Gets or sets the window's X position.
     /// </summary>
-    public double? X;
+    public double? X { get; set; }
 
     /// <summary>
     /// Gets or sets the window's Y position.
     /// </summary>
-    public double? Y;
+    public double? Y { get; set; }
 
     /// <summary>
     /// Gets or sets the window's width.
     /// </summary>
-    public double Width;
+    public double Width { get; set; } = initialWidth;
 
     /// <summary>
     /// Gets or sets the window's height.
     /// </summary>
-    public double Height;
+    public double Height { get; set; } = initialHeight;
 
     /// <summary>
     /// Gets or sets the window's X position when not maximized.
     /// </summary>
-    public double RestoredX;
+    public double RestoredX { get; set; }
 
     /// <summary>
     /// Gets or sets the window's Y position when not maximized.
     /// </summary>
-    public double RestoredY;
+    public double RestoredY { get; set; }
 
     /// <summary>
     /// Gets or sets the window's width when not maximized.
     /// </summary>
-    public double RestoredWidth;
+    public double RestoredWidth { get; set; }
 
     /// <summary>
     /// Gets or sets the window's height when not maximized.
     /// </summary>
-    public double RestoredHeight;
+    public double RestoredHeight { get; set; }
 
     /// <summary>
     /// True if the window is maximized.
@@ -61,13 +66,12 @@ public partial class StoredWindowState
     public bool Maximized { get; set; } = false;
 
     /// <summary>
-    /// Initializes a new object of the StoredWindowState class using the specified initial width and height.
+    /// Restores the state of the window.
     /// </summary>
-    /// <param name="initialWidth">The initial width of the window.</param>
-    /// <param name="initialHeight">The initial height of the window.</param>
-    public StoredWindowState(double initialWidth, double initialHeight)
-    {
-        Width = initialWidth;
-        Height = initialHeight;
-    }
+    public abstract void RestoreWindowState();
+
+    /// <summary>
+    /// Stores the state of the window.
+    /// </summary>
+    public abstract void StoreWindowState();
 }

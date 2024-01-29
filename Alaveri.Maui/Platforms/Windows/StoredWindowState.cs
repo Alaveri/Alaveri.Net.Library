@@ -1,17 +1,23 @@
 ﻿using Microsoft.UI;
 using Microsoft.UI.Windowing;
-using System.Text.Json.Serialization;
+using Newtonsoft.Json;
 
 namespace Alaveri.Maui
-{
-    public partial class StoredWindowState
+{ 
+    /// <summary>
+    /// Contains platform-specific stored window state information.
+    /// </summary>
+    /// <param name="initialWidth">The initial width of the window.</param>
+    /// <param name="initialHeight">The initial height of the window.</param>
+    public class StoredWindowState(double initialWidth, double initialHeight) : BaseStoredWindowState(initialWidth, initialHeight), IStoredWindowState
     {
+        [JsonIgnore]
         public AppWindow? AppWindow { get; set; }
 
         /// <summary>
-        /// Restores the state of the window from the configuration.
+        /// Restores the state of the window.
         /// </summary>
-        public void RestoreWindowState()
+        public override void RestoreWindowState()
         {
             if (Window == null)
                 return;
@@ -44,25 +50,33 @@ namespace Alaveri.Maui
             });
         }
 
-        public void StoreWindowState()
+        /// <summary>
+        /// Stores the state of the window.
+        /// </summary>
+        public override void StoreWindowState()
         {
             if (AppWindow == null || Window == null)
                 return;
             Maximized = false;
-            X = Window.X; 
-            Y = Window.Y;
-            Width = Window.Width; 
-            Height = Window.Height;
             if (AppWindow?.Presenter != null && AppWindow.Presenter is OverlappedPresenter presenter)
             {
-                if (presenter.State == OverlappedPresenterState.Maximized)
-                    Maximized = true;
-                else
+                switch (presenter.State)
                 {
-                    RestoredX = Window.X;
-                    RestoredY = Window.Y;
-                    RestoredWidth = Window.Width;
-                    RestoredHeight = Window.Height;
+                    case OverlappedPresenterState.Minimized:
+                        break;
+                    case OverlappedPresenterState.Restored:
+                        X = Window.X;
+                        Y = Window.Y;
+                        Width = Window.Width;
+                        Height = Window.Height;
+                        RestoredX = Window.X;
+                        RestoredY = Window.Y;
+                        RestoredWidth = Window.Width;
+                        RestoredHeight = Window.Height;
+                        break;
+                    case OverlappedPresenterState.Maximized:
+                        Maximized = true;
+                        break;
                 }
             }
 

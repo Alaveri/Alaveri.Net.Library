@@ -1,6 +1,4 @@
-﻿using Alaveri.Core.Extensions.Conversion;
-
-namespace Alaveri.Core.Enumerations
+﻿namespace Alaveri.Core.Enumerations
 {
     /// <summary>
     /// Extension methods for enum related functions.

@@ -1,10 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Alaveri.Windows.Forms
+﻿namespace Alaveri.Windows.Forms
 {
     /// <summary>
     /// Manager for controlling display of popup panels.

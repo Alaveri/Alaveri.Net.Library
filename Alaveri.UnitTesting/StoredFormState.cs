@@ -1,7 +1,4 @@
-﻿using System.Text.Json.Serialization;
-
-
-namespace Alaveri.Maui.Windows
+﻿namespace Alaveri.Maui.Windows
 {
     /// <summary>
     /// Represents the state of a window, including position, location and state.

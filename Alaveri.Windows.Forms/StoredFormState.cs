@@ -1,7 +1,5 @@
 ﻿using Newtonsoft.Json;
-using System.DirectoryServices.ActiveDirectory;
 using System.Xml.Serialization;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Alaveri.Windows.Forms;
 
@@ -76,7 +74,7 @@ public class StoredFormState
     }
 
     /// <summary>
-    /// Restrores the form's state.
+    /// Restores the form's state.
     /// </summary>
     public void RestoreFormState()
     {
@@ -104,7 +102,7 @@ public class StoredFormState
     }
 
     /// <summary>
-    /// Init/ializes a new instance of the WindowState class.
+    /// Initializes a new instance of the WindowState class.
     /// </summary>
     public StoredFormState()
     {

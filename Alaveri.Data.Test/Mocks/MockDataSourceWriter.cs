@@ -1,5 +1,4 @@
-﻿using Alaveri.Core;
-using Alaveri.UnitTesting;
+﻿using Alaveri.UnitTesting;
 
 namespace Alaveri.Data.Test.Mocks
 {

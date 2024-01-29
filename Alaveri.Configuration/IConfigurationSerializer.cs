@@ -1,6 +1,4 @@
-﻿using System.Text;
-
-namespace Alaveri.Configuration
+﻿namespace Alaveri.Configuration
 {
     public interface IConfigurationSerializer
     {
